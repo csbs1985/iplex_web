@@ -12,9 +12,6 @@ import { AppAbstract } from './app.abstract';
 })
 export class AppComponent extends AppAbstract {
   ngOnInit(): void {
-    const defaultLange = localStorage.getItem('language') || 'en';
-
-    this._translateService.setDefaultLang(defaultLange);
-    this._translateService.use(defaultLange);
+    this._languageService.initLanguage();
   }
 }
