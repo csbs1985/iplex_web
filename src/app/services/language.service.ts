@@ -9,17 +9,26 @@ export class LanguageService {
     protected _translateService = inject(TranslateService);
 
     initLanguage(): void {
-        const defaultLange = (localStorage.getItem('language') as LaguangeEnum || LaguangeEnum.ENGLISH);
-        this.setLanguage(defaultLange);
-    }
+        const defaultLange = localStorage.getItem('language');
+        // let lang = LaguangeEnum.ENGLISH;
 
-    changeLanguage(lang: LaguangeEnum): void {
-        localStorage.setItem('language', lang);
-        this.setLanguage(lang);
+        if (defaultLange !== null) {
+            let lang = defaultLange;
+        } else {}
+
+        // this.setLanguage(lang);
     }
 
     setLanguage(lang: LaguangeEnum): void {
         this._translateService.setDefaultLang(lang);
         this._translateService.use(lang);
+
+        const defaultLange = localStorage.getItem('language');
+
+        if (defaultLange !== null) {
+            localStorage.setItem('language', JSON.stringify(lang));
+        } else {
+            localStorage.setItem('language', JSON.stringify(LaguangeEnum.ENGLISH));
+        }
     }
 }

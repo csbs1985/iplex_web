@@ -4,10 +4,14 @@
     box-sizing: border-box;
     outline: none;
     list-style: none;
+    font-family: "Sora", sans-serif;
     font-size: 1rem;
+    font-weight: 500;
+    font-optical-sizing: auto;
     line-height: 120%;
+    color: var(--color-txt-base);
 }
 
 body {
-    background-color: var(--color-bg-back);
+    background-color: var(--color-bg-base);
 }
