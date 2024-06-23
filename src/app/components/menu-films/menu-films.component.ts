@@ -27,17 +27,12 @@ export class MenuFilmsComponent extends AppAbstract implements OnInit {
     { name: "Divertidamente", cover: 'assets/images/cover_teste.jpg' }
   ];
 
-  public screenWidth: any;
-
   protected titleMidia!: string;
 
   ngOnInit(): void {
-    this.screenWidth = window.innerWidth + "px";
-    console.log(this.screenWidth);
-    
     this.getTitleMidia();
   }
-
+  
   private getTitleMidia(): void {
     this.titleMidia = this._typeMidiaService.getTypeMidiaEnum(this.typeMidia);
   }
