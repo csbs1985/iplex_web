@@ -1,3 +1,9 @@
 {
-    "SEARCH": "Search"
-}
+    "CHANNEL": "Channel",
+    "CONTINUE_WACTHING": "Continue Wacthing",
+    "FAVORITES": "Favorites",
+    "MOVIES": "Movies",
+    "SEARCH": "Search",
+    "SERIES": "Series",
+    "SHOW_ALL": "Show all"
+}   

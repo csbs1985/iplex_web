@@ -1,3 +1,9 @@
 {
-    "SEARCH": "Pesquisar"
+    "CHANNEL": "Canal",
+    "CONTINUE_WACTHING": "Continuar Assistindo",
+    "FAVORITES": "Favoritos",
+    "MOVIES": "Filmes",
+    "SEARCH": "Pesquisar",
+    "SERIES": "Séries",
+    "SHOW_ALL": "Mostrar Tudo"
 }

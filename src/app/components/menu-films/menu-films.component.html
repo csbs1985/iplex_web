@@ -1,0 +1,13 @@
+<section class="w-screen flex flex-col mb-8">
+    <h2>{{ titleMidia | translate }}</h2>
+
+    <div class="flex gap-8 overflow-x-scroll px-8" [style.width]="screenWidth">
+        <div class="min-w-[240px] cover">
+            <h3>{{ "SHOW_ALL" | translate }}</h3>
+        </div>
+
+        <div *ngFor="let item of listContinueWatching" >
+            <img [src]="item.cover" [alt]="item.name" class="min-w-[240px] cover">
+        </div>
+    </div>
+</section>
