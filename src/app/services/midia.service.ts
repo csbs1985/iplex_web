@@ -4,7 +4,7 @@ import { TypeMidiaEnum } from "../enums/type-midia.enum";
 @Injectable({
     providedIn: 'root'
 })
-export class TypeMidiaService {
+export class MidiaService {
 
     getTypeMidiaEnum(typeMidia: TypeMidiaEnum): string {
         if (typeMidia === TypeMidiaEnum.CHANNEL) return "CHANNEL";
@@ -12,5 +12,18 @@ export class TypeMidiaService {
         if (typeMidia === TypeMidiaEnum.FAVORITE) return "FAVORITES";
         if (typeMidia === TypeMidiaEnum.MOVIE) return "MOVIES";
         return "SERIES";
+    }
+
+    isValidMidia(url: string): boolean {
+        try {
+            new URL(url);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    handleImageError(event: any): void {
+        event.target.src = '';
     }
 }

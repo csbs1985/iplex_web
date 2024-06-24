@@ -1,13 +1,21 @@
-<section class="w-screen flex flex-col mb-8">
+<section class="w-screen flex flex-col">
     <h2>{{ titleMidia | translate }}</h2>
 
-    <div class="w-screen flex gap-8 px-8 overflow-x-scroll">
-        <div class="min-w-[240px] cover">
+    <div class="w-screen flex gap-4 px-8 overflow-x-scroll">
+        <div class="hover cover">
             <h3>{{ "SHOW_ALL" | translate }}</h3>
         </div>
 
-        <div *ngFor="let item of listContinueWatching" >
-            <img [src]="item.cover" [alt]="item.name" class="min-w-[240px] cover">
-        </div>
+        @for(item of listContinueWatching; track item){
+            <div class="hover flex flex-col">
+                <div class="cover">
+                    <img [src]="item.cover" (error)="_midiaService.handleImageError($event)">
+                </div>
+
+                <h4 class="mt-2">{{ item.name }}</h4>
+
+                <p>{{ item.rate }} &middot; {{ item.time }}</p>
+            </div>
+        }
     </div>
 </section>

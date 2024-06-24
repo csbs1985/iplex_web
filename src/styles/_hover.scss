@@ -1,0 +1,13 @@
+.hover {
+    cursor: pointer;
+
+    &:hover {
+        * {
+            color: var(--color-primary);
+        }
+
+        .cover>img {
+            opacity: 1;
+        }
+    }
+}
