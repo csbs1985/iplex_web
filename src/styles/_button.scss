@@ -1,0 +1,9 @@
+button {
+    height: 48px;
+    border-radius: 12px;
+    padding: 0 1rem;
+
+    &:hover {
+        background-color: var(--color-bg-hover);
+    }
+}

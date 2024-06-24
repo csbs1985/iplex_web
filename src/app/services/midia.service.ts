@@ -24,6 +24,6 @@ export class MidiaService {
     }
 
     handleImageError(event: any): void {
-        event.target.src = '';
+         event.target.src = '';
     }
 }
