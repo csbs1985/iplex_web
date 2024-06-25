@@ -71,6 +71,15 @@ export class LoginPage extends AppAbstract implements OnInit {
       users: [
         {
           name: this.formLogin.value.user,
+          avatar: 'https://rollingstone.uol.com.br/media/_versions/homem_de_ferro_reproducao_widelg.jpg'
+        },
+        {
+          name: 'Luiza',
+          avatar: ''
+        }
+        ,
+        {
+          name: 'Sabrina',
           avatar: ''
         }
       ]

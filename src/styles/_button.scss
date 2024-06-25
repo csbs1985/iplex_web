@@ -1,16 +1,16 @@
-button {
-    height: 48px;
-    border-radius: 0.75rem;
-    padding: 0 1rem;
-    background-color: var(--color-bg-hover);
-    font-weight: 900;
-
-    &:hover {
-        opacity: .9;
-    }
-}
-
 .btn {
+    &-primary {
+        height: 48px;
+        border-radius: 0.75rem;
+        padding: 0 1rem;
+        background-color: var(--color-bg-hover);
+        font-weight: 900;
+
+        &:hover {
+            opacity: .9;
+        }
+    }
+
     &-secondary {
         width: fit-content;
         height: 42px;
@@ -18,9 +18,36 @@ button {
         background-color: var(--color-bg-element);
         border-radius: 20px;
         font-weight: 300;
+
+        &:hover {
+            opacity: .9;
+        }
     }
 
-    &:hover {
-        opacity: .9;
+    &-tertiary {
+        width: fit-content;
+        height: 42px;
+        background-color: var(--color-bg-base);
+        border-radius: 20px;
+        font-weight: 300;
+        padding: 0 1rem;
+
+        &:hover {
+            background-color: var(--color-bg-hover);
+            opacity: 1;
+        }
+    }
+
+    &-circle {
+        width: auto;
+        height: auto;
+        background-color: var(--color-bg-base);
+        border-radius: 50%;
+        border: 3px solid var(--color-bg-base);
+
+        &:hover {
+            border-color: var(--color-bg-hover);
+            opacity: 1;
+        }
     }
 }

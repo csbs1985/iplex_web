@@ -5,12 +5,12 @@ import { AppAbstract } from '../../app.abstract';
 import { TypeMidiaEnum } from '../../enums/type-midia.enum';
 
 @Component({
-  selector: 'ipx-menu-films',
+  selector: 'ipx-menu',
   standalone: true,
   imports: [NgFor, NgIf, TranslateModule],
-  templateUrl: './menu-films.component.html'
+  templateUrl: './menu.component.html'
 })
-export class MenuFilmsComponent extends AppAbstract implements OnInit {
+export class MenuComponent extends AppAbstract implements OnInit {
   @Input() typeMidia: TypeMidiaEnum = TypeMidiaEnum.MOVIE;
 
   protected listContinueWatching = [

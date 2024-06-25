@@ -13,10 +13,12 @@
     "PASSWORD": "Password",
     "PASSWORD_INCORRECT": "Incorrect password, try again",
     "PROCESSING": "Please wait, we are processing.",
+    "RECHARGE": "Recharge",
     "SEARCH": "Search",
     "SERIES": "Series",
+    "SETTINGS": "Settings",
     "SHOW_ALL": "Show all",
     "USER": "User",
     "USER_NOT_FOUND": "User not found",
     "WHOS_WACTHING": "Who's Wacthing?"
-}   
+}

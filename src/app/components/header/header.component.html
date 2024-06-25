@@ -1,41 +1,45 @@
-<header class="w-screen px-4 flex justify-between">
-    <nav class="h-[64px] flex justify-end items-center">
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+<header class="w-screen h-[10%] px-4 mt-4 flex justify-between">
+    <nav class="flex justify-end items-center">
+        <button class="btn-circle" [routerLink]="['/users']">
+            @if(user.avatar){
+            <img class="avatar w-[48px] h-[48px]" [src]="user.avatar" (error)="_midiaService.handleImageError($event)">
+            } @else {
+            <p>{{ user.name }}</p>
+            }
+        </button>
+
+        <button class="btn-tertiary" [routerLink]="['/routePath']">
             <p>{{ 'CONTINUE_WACTHING' | translate }} </p>
         </button>
 
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+        <button class="btn-tertiary" [routerLink]="['/routePath']">
             <p>{{ 'FAVORITES' | translate }} </p>
         </button>
 
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+        <button class="btn-tertiary" [routerLink]="['/routePath']">
             <p>{{ 'CHANNEL' | translate }} </p>
         </button>
 
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+        <button class="btn-tertiary" [routerLink]="['/routePath']">
             <p>{{ 'MOVIES' | translate }} </p>
         </button>
 
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+        <button class="btn-tertiary" [routerLink]="['/routePath']">
             <p>{{ 'SERIES' | translate }} </p>
         </button>
 
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+        <button class="btn-tertiary" [routerLink]="['/routePath']">
             <p>{{ 'SEARCH' | translate }} </p>
         </button>
     </nav>
 
-    <nav class="h-[64px] flex justify-end items-center">
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
-            <p>Charles Santos</p>
+    <nav class="flex justify-end items-center">
+        <button class="btn-tertiary" (click)="reloadPage()">
+            <p>{{ 'RECHARGE' | translate }}</p>
         </button>
 
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
-            <p>Recarregar</p>
-        </button>
-
-        <button [routerLink]="['/routePath']" routerLinkActive="router-link-active">
-            <p>Definições</p>
+        <button class="btn-tertiary" [routerLink]="['/settings']">
+            <p>{{ 'SETTINGS' | translate }}</p>
         </button>
     </nav>
 </header>

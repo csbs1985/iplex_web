@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Channel } from 'diagnostics_channel';
 import { AppAbstract } from '../../app.abstract';
 import { HeaderComponent } from '../../components/header/header.component';
-import { MenuFilmsComponent } from '../../components/menu-films/menu-films.component';
+import { MenuComponent } from '../../components/menu/menu.component';
 import { TypeMidiaEnum } from '../../enums/type-midia.enum';
 
 @Component({
   standalone: true,
-  imports: [MenuFilmsComponent, HeaderComponent],
+  imports: [MenuComponent, HeaderComponent],
   templateUrl: './home.page.html'
 })
 export class HomePage extends AppAbstract implements OnInit {
