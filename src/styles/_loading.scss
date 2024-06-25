@@ -1,0 +1,25 @@
+.loading {
+    width: 160px;
+    height: 24px;
+    display: block;
+    border-radius: 0.75rem;
+    color: var(--color-primary);
+    border: 2px solid;
+    position: relative;
+}
+
+.loading::before {
+    content: "";
+    position: absolute;
+    margin: 2.2px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: loading-animation 2s infinite;
+}
+
+@keyframes loading-animation {
+    100% {
+        inset: 0;
+    }
+}

@@ -12,8 +12,12 @@
 
         <button class="w-full mb-4">{{ 'LOGIN' | translate }}</button>
 
-        <p *ngIf="true" class="txt-error mb-4">Usuário ou senha incorreto</p>
+        <p *ngIf="subject && f['user'].errors" class="txt-error mb-4">Campo usuário obrigatório</p>
+        <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">Campo senha obrigatório</p>
+        <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">Usuário e/ou senha incorretos</p>
 
         <p>{{ 'NEW_HERE' | translate }}</p>
     </form>
 </section>
+
+<ipx-loading *ngIf="loading" [loading]="true"></ipx-loading>
