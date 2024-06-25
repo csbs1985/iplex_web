@@ -18,13 +18,10 @@ export class HeaderComponent extends AppAbstract implements OnInit {
       this.getUser();
   }
 
-
   private getUser(){
     if (typeof localStorage !== 'undefined') {
       const login = JSON.parse(localStorage.getItem('login') || '');
       this.user = login.users[0];
     }
   }
-
-  reloadPage(){}
 }

@@ -30,7 +30,6 @@ export class ApiService {
 
     private parsePlaylist(playlist: any): Channel[] {
         const channels: Channel[] = [];
-
         const lines = playlist.split('\n');
 
         let channelName = '';

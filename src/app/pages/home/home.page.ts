@@ -1,33 +1,42 @@
+import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Channel } from 'diagnostics_channel';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
 import { HeaderComponent } from '../../components/header/header.component';
-import { MenuComponent } from '../../components/menu/menu.component';
+import { LastMidiaComponent } from '../../components/last-midia/last-midia.component';
+import { LoadingComponent } from '../../components/loading/loading.component';
 import { TypeMidiaEnum } from '../../enums/type-midia.enum';
+import { PlaylistItem } from '../../models/playlist.interface';
 
 @Component({
   standalone: true,
-  imports: [MenuComponent, HeaderComponent],
+  imports: [LastMidiaComponent, HeaderComponent, LoadingComponent, NgIf, TranslateModule],
   templateUrl: './home.page.html'
 })
 export class HomePage extends AppAbstract implements OnInit {
   typeMidiaEnum: typeof TypeMidiaEnum = TypeMidiaEnum;
 
-  channels: Channel[] = [];
-  currentChannelIndex = 0;
+  protected listChannels: PlaylistItem[] = [];
+  protected listMovies: PlaylistItem[] = [];
+  protected listSeries: PlaylistItem[] = [];
 
   ngOnInit(): void {
-    this.getPlaylistData();
+    this.getHomeChannels();
   }
 
-  getPlaylistData(): void {
-    this._apiService.fetchChannelList()
-      .subscribe((channels: any) => {
-        this.channels = channels;
-      }, error => {
-        console.error(error);
-      });
+  private getHomeChannels(): void {
+    this.listChannels = this._midiaService.listChannels;
 
-      console.log(this.channels);
+    this.getHomeMovies();
+  }
+
+  private getHomeMovies(): void {
+    this.listMovies = this._midiaService.listMovies.slice(0, 10);
+
+    this.getHomeSeries();
+  }
+
+  private getHomeSeries(): void {
+    this.listSeries = this._midiaService.listSeries.slice(0, 10);
   }
 }

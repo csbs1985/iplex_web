@@ -9,6 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './loading.component.html'
 })
 export class LoadingComponent {
-  @Input() loading: boolean = false;
+  @Input() title!: string;
   @Input() text: string = 'PROCESSING';
 }

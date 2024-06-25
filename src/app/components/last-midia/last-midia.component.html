@@ -6,15 +6,15 @@
             <h3>{{ "SHOW_ALL" | translate }}</h3>
         </div>
 
-        @for(item of listContinueWatching; track item){
+        @for(item of midia; track item){
             <div class="hover flex flex-col">
                 <div class="cover">
-                    <img [src]="item.cover" (error)="_midiaService.handleImageError($event)">
+                    <img [src]="item.logoUrl" (error)="_midiaService.handleImageError($event)">
                 </div>
 
-                <h4 class="mt-2">{{ item.name }}</h4>
+                <!-- <h4 class="mt-2">{{ item.name }}</h4> -->
 
-                <p>{{ item.rate }} &middot; {{ item.time }}</p>
+                <!-- <p>{{ item.rate }} &middot; {{ item.time }}</p> -->
             </div>
         }
     </div>

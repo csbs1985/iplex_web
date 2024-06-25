@@ -1,17 +1,15 @@
 <ipx-header></ipx-header>
 
 <section class="mb-8">
-    <div>
-        <p class="text-[300px]"><span class="text-[300px]">i</span>Plex</p>
-    </div>
+    <img class="my-14 ml-8" src="../../../assets/images/logo.png">
 
-    <ipx-menu [typeMidia]="typeMidiaEnum.CONTINUE_WACTHING"></ipx-menu>
+    <ipx-last-midia [midia]="listMovies" [typeMidia]="typeMidiaEnum.CONTINUE_WACTHING"></ipx-last-midia>
 
-    <ipx-menu [typeMidia]="typeMidiaEnum.FAVORITE"></ipx-menu>
+    <ipx-last-midia [midia]="listMovies" [typeMidia]="typeMidiaEnum.FAVORITE"></ipx-last-midia>
 
-    <ipx-menu [typeMidia]="typeMidiaEnum.CHANNEL"></ipx-menu>
+    <ipx-last-midia [midia]="listMovies" [typeMidia]="typeMidiaEnum.CHANNEL"></ipx-last-midia>
 
-    <ipx-menu [typeMidia]="typeMidiaEnum.MOVIE"></ipx-menu>
+    <ipx-last-midia [midia]="listMovies" [typeMidia]="typeMidiaEnum.MOVIE"></ipx-last-midia>
 
-    <ipx-menu [typeMidia]="typeMidiaEnum.SERIE"></ipx-menu>
+    <ipx-last-midia [midia]="listSeries" [typeMidia]="typeMidiaEnum.SERIE"></ipx-last-midia>
 </section>

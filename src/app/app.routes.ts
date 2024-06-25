@@ -17,6 +17,11 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/users/users.page').then(p => p.UsersPage),
         canActivate: [AuthGuard]
     },
+    {
+        path: 'recharge',
+        loadComponent: () => import('./pages/recharge/recharge.page').then(p => p.RechargePage),
+        canActivate: [AuthGuard]
+    },
 
     // {
     //     path: 'watch',

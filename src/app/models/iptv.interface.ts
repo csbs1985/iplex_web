@@ -4,8 +4,3 @@ export interface IptvInterface {
     password?: string,
     url?: string
 }
-
-export interface PlaylistItem {
-    name: string;
-    url: string;
-}

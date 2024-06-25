@@ -34,7 +34,7 @@
     </nav>
 
     <nav class="flex justify-end items-center">
-        <button class="btn-tertiary" (click)="reloadPage()">
+        <button class="btn-tertiary" [routerLink]="['/recharge']">
             <p>{{ 'RECHARGE' | translate }}</p>
         </button>
 

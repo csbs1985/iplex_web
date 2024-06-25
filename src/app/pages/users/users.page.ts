@@ -31,7 +31,7 @@ export class UsersPage extends AppAbstract implements OnInit {
 
   protected selectUser(user: any): void {
     this.userSelected = user;
-    this._router.navigate(['']);
+    this._router.navigate(['/recharge']);
   }
 
   protected addUser(): void { 
