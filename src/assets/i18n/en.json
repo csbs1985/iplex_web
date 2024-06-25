@@ -2,8 +2,13 @@
     "CHANNEL": "Channel",
     "CONTINUE_WACTHING": "Continue Wacthing",
     "FAVORITES": "Favorites",
+    "LOGIN": "Login",
+    "LOGIN_CREATE": "Login or create a account",
     "MOVIES": "Movies",
+    "NEW_HERE": "New here? iplex.com.",
+    "PASSWORD": "Password",
     "SEARCH": "Search",
     "SERIES": "Series",
-    "SHOW_ALL": "Show all"
+    "SHOW_ALL": "Show all",
+    "USER": "User"
 }   

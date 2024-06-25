@@ -1,11 +1,18 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: '', redirectTo: '', pathMatch: 'full' },
     {
         path: '',
-        loadComponent: () => import('./pages/home/home.page').then(m => m.HomePage)
+        loadComponent: () => import('./pages/home/home.page').then(p => p.HomePage),
+        canActivate: [AuthGuard]
     },
+    {
+        path: 'login',
+        loadComponent: () => import('./pages/login/login.page').then(p => p.LoginPage)
+    },
+
     // {
     //     path: 'watch',
     //     loadChildren: () => import('./watch/watch.module').then(m => m.WatchModule),

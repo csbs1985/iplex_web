@@ -1,13 +1,19 @@
-// auth.guard.ts
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
+import { CanActivate } from '@angular/router';
+import { AppAbstract } from './app.abstract';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    // Add your authentication logic here
-    return true; // or false if not authenticated
+export class AuthGuard extends AppAbstract implements CanActivate {
+  canActivate(): boolean {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      return true;
+    } else {
+      this._router.navigate(['/login']);
+      return false;
+    }
   }
 }

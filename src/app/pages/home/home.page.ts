@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Channel } from 'diagnostics_channel';
 import { AppAbstract } from '../../app.abstract';
+import { HeaderComponent } from '../../components/header/header.component';
 import { MenuFilmsComponent } from '../../components/menu-films/menu-films.component';
 import { TypeMidiaEnum } from '../../enums/type-midia.enum';
 
 @Component({
   selector: 'ipx-home.page',
   standalone: true,
-  imports: [MenuFilmsComponent],
+  imports: [MenuFilmsComponent, HeaderComponent],
   templateUrl: './home.page.html'
 })
 export class HomePage extends AppAbstract implements OnInit {
