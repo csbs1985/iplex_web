@@ -14,7 +14,8 @@
 
         <p *ngIf="subject && f['user'].errors" class="txt-error mb-4">Campo usuário obrigatório</p>
         <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">Campo senha obrigatório</p>
-        <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">Usuário e/ou senha incorretos</p>
+        <p *ngIf="subject && errorUser" class="txt-error mb-4">Usuário não encontrado</p>
+        <p *ngIf="subject && errorPasswrod" class="txt-error mb-4">Senha incorretas, tente novamente</p>
 
         <p>{{ 'NEW_HERE' | translate }}</p>
     </form>

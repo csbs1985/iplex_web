@@ -16,6 +16,9 @@ export class LoginPage extends AppAbstract implements OnInit {
 
   protected loading: boolean = false;
 
+  protected errorUser: boolean = false;
+  protected errorPasswrod: boolean = false;
+
   subject: boolean = false;
 
   ngOnInit(): void {
@@ -33,10 +36,32 @@ export class LoginPage extends AppAbstract implements OnInit {
     this.subject = true;
 
     if (this.formLogin.valid) {
-      this.loading = true;
+      try {
+        this.userValidator();
+      } catch (error) {
 
-      console.log(this.formLogin.value);
+      }
     }
+  }
+
+  private userValidator(): void {
+    this.loading = true;
+    this.errorUser = this.errorPasswrod = false;
+
+    console.log(this.formLogin.value);
+
+    const user = this.formLogin.value.user;
+    const password = this.formLogin.value.password;
+
+    if (user !== 'csbs') {
+      this.errorUser = true;
+    } else if (password !== "1234") {
+      this.errorPasswrod = true;
+    } else {
+      this._router.navigate(['/users']);
+    };
+
+    this.loading = false;
   }
 
   get f(): { [key: string]: any } {
