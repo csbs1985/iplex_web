@@ -1,21 +1,19 @@
 <section class="w-screen flex flex-col">
     <h2>{{ titleMidia | translate }}</h2>
 
-    <div class="w-screen flex gap-4 px-8 overflow-x-scroll">
-        <div class="hover cover">
+    <div class="w-screen flex gap-2 px-8 overflow-x-scroll">
+        <div class="cover">
             <h3>{{ "SHOW_ALL" | translate }}</h3>
         </div>
 
         @for(item of midia; track item){
-            <div class="hover flex flex-col">
-                <div class="cover">
-                    <img [src]="item.logoUrl" (error)="_midiaService.handleImageError($event)">
-                </div>
+        <div class="cover">
+            <img [src]="item.logoUrl" (error)="_midiaService.handleImageError($event)">
 
-                <!-- <h4 class="mt-2">{{ item.name }}</h4> -->
-
-                <!-- <p>{{ item.rate }} &middot; {{ item.time }}</p> -->
-            </div>
+            <!-- <h4 class="mt-2">{{ item.name }}</h4> -->
+    
+            <!-- <p>{{ item.rate }} &middot; {{ item.time }}</p> -->
+        </div>
         }
     </div>
 </section>

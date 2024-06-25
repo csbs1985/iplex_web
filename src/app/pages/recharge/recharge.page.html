@@ -1,11 +1,23 @@
 <section class="w-screen h-screen flex justify-center p-14 pt-28">
     <div class="flex flex-col justify-center items-center gap-8">
-        <img src="assets/images/logo.png" class="w-[140px]">
+        @if(!isErrorFetch){
+        <div class="flex flex-col justify-center items-center gap-8">
+            <img src="assets/images/logo.png" class="w-[140px]">
 
-        <h2 class="m-0">{{ 'PROCESSING' | translate }}</h2>
+            <h2 class="m-0">{{ 'PROCESSING' | translate }}</h2>
 
-        <p>{{ 'UPDATING_LIST' | translate }}</p>
+            <p>{{ 'UPDATING_LIST' | translate }}</p>
 
-        <span class="loading w-[160px]"></span>
+            <span class="loading w-[160px]"></span>
+        </div>
+        } @else {
+        <div class="flex flex-col justify-center items-center gap-4">
+            <h2 class="m-0">{{ 'UNABLE_UPDATE' | translate }}</h2>
+
+            <button class="btn-primary" (click)="fetchPlaylistData()">{{ 'TRY_AGAIN' | translate }}</button>
+
+            <button class="btn-secondary" (click)="_loginService.logout()">{{ 'LOGOUT' | translate }}</button>
+        </div>
+        }
     </div>
 </section>

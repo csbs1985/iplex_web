@@ -9,7 +9,20 @@ import { AppAbstract } from '../../app.abstract';
   templateUrl: './recharge.page.html'
 })
 export class RechargePage extends AppAbstract implements OnInit {
+  protected isErrorFetch: boolean = false;
+
   ngOnInit(): void {
-    this._midiaService.fetchPlaylistData();
+    this.fetchPlaylistData();
+  }
+
+  protected fetchPlaylistData(): void {
+    this._midiaService.fetchPlaylistData()
+      .subscribe(
+        (result: any) => { },
+        (error: any) => {
+          console.error(error);
+          this.isErrorFetch = true;
+        }
+      );
   }
 }

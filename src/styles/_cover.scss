@@ -1,6 +1,7 @@
 .cover {
-    min-width: 15rem;
-    height: 21.375rem;
+    width: 260px;
+    min-width: 260px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,5 +11,9 @@
     img {
         border-radius: 6px;
         opacity: .8;
+    }
+
+    &:hover {
+        border: 3px solid var(--color-bg-hover);
     }
 }

@@ -1,6 +1,6 @@
 import { Injectable, inject } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject } from "rxjs";
+import { Observable, Subject, catchError, tap } from "rxjs";
 import { TypeMidiaEnum } from "../enums/type-midia.enum";
 import { PlaylistItem } from "../models/playlist.interface";
 import { ApiService } from "./api.service";
@@ -22,15 +22,18 @@ export class MidiaService {
     movies$ = new Subject<PlaylistItem[]>();
     series$ = new Subject<PlaylistItem[]>();
 
-    fetchPlaylistData(): void {
-        this._apiService.fetchChannelList()
-            .subscribe((list: any) => {
+    fetchPlaylistData(): Observable<any> {
+        return this._apiService.fetchChannelList().pipe(
+            tap((list: any) => {
                 this.listIptv = list;
                 this.listAll$.next(this.listIptv);
                 this.getAllMovies();
-            }, error => {
+            }),
+            catchError((error: any) => {
                 console.error(error);
-            });
+                throw error;
+            })
+        );
     }
 
     getAllMovies(): void {
