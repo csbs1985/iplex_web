@@ -1,19 +1,31 @@
 .cover {
-    width: 260px;
-    min-width: 260px;
-    height: 100%;
+    width: 255px;
+    min-width: 255px;
+    height: 382px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--color-bg-element);
-    border-radius: 6px;
+    border-radius: 12px;
+    border: 3px solid var(--color-bg-base);
 
     img {
-        border-radius: 6px;
+        height: 100%;
+        border-radius: 10px;
         opacity: .8;
     }
 
     &:hover {
-        border: 3px solid var(--color-bg-hover);
+        border-color: var(--color-bg-hover);
+    }
+
+    &-channel {
+        height: 255px;
+
+        img {
+            width: 80%;
+            height: 80%;
+            opacity: .8;
+        }
     }
 }

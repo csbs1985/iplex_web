@@ -6,7 +6,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { LastMidiaComponent } from '../../components/last-midia/last-midia.component';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { TypeMidiaEnum } from '../../enums/type-midia.enum';
-import { PlaylistItem } from '../../models/playlist.interface';
+import { MidiaInterface } from '../../models/midia.interface';
 
 @Component({
   standalone: true,
@@ -16,16 +16,16 @@ import { PlaylistItem } from '../../models/playlist.interface';
 export class HomePage extends AppAbstract implements OnInit {
   typeMidiaEnum: typeof TypeMidiaEnum = TypeMidiaEnum;
 
-  protected listChannels: PlaylistItem[] = [];
-  protected listMovies: PlaylistItem[] = [];
-  protected listSeries: PlaylistItem[] = [];
+  protected listChannels: MidiaInterface[] = [];
+  protected listMovies: MidiaInterface[] = [];
+  protected listSeries: MidiaInterface[] = [];
 
   ngOnInit(): void {
     this.getHomeChannels();
   }
 
   private getHomeChannels(): void {
-    this.listChannels = this._midiaService.listChannels;
+    this.listChannels = this._midiaService.listChannels.slice(0, 10);
 
     this.getHomeMovies();
   }
