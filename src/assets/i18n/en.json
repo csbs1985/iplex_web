@@ -4,12 +4,16 @@
     "FAVORITES": "Favorites",
     "LOGIN": "Login",
     "LOGIN_CREATE": "Login or create a account",
+    "MANDATOTY_PASSWORD": "Mandatory password field",
+    "MANDATOTY_USER": "Mandatory user field",
     "MOVIES": "Movies",
     "NEW_HERE": "New here? iplex.com.",
     "PASSWORD": "Password",
+    "PASSWORD_INCORRECT": "Incorrect password, try again",
     "PROCESSING": "Please wait, we are processing.",
     "SEARCH": "Search",
     "SERIES": "Series",
     "SHOW_ALL": "Show all",
-    "USER": "User"
+    "USER": "User",
+    "USER_NOT_FOUND": "User not found"
 }   

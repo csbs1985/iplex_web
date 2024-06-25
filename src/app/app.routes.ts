@@ -12,6 +12,10 @@ export const routes: Routes = [
         path: 'login',
         loadComponent: () => import('./pages/login/login.page').then(p => p.LoginPage)
     },
+    {
+        path: 'users',
+        loadComponent: () => import('./pages/users/users.page').then(p => p.UsersPage)
+    },
 
     // {
     //     path: 'watch',

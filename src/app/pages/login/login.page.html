@@ -12,10 +12,10 @@
 
         <button class="w-full mb-4">{{ 'LOGIN' | translate }}</button>
 
-        <p *ngIf="subject && f['user'].errors" class="txt-error mb-4">Campo usuário obrigatório</p>
-        <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">Campo senha obrigatório</p>
-        <p *ngIf="subject && errorUser" class="txt-error mb-4">Usuário não encontrado</p>
-        <p *ngIf="subject && errorPasswrod" class="txt-error mb-4">Senha incorretas, tente novamente</p>
+        <p *ngIf="subject && f['user'].errors" class="txt-error mb-4">{{ 'MANDATOTY_USER' | translate }}</p>
+        <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">{{ 'MANDATOTY_PASSWORD' | translate }}</p>
+        <p *ngIf="subject && errorUser" class="txt-error mb-4">{{ 'USER_NOT_FOUND' | translate }}</p>
+        <p *ngIf="subject && errorPasswrod" class="txt-error mb-4">{{ 'PASSWORD_INCORRECT' | translate }}</p>
 
         <p>{{ 'NEW_HERE' | translate }}</p>
     </form>

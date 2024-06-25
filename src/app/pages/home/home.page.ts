@@ -6,7 +6,6 @@ import { MenuFilmsComponent } from '../../components/menu-films/menu-films.compo
 import { TypeMidiaEnum } from '../../enums/type-midia.enum';
 
 @Component({
-  selector: 'ipx-home.page',
   standalone: true,
   imports: [MenuFilmsComponent, HeaderComponent],
   templateUrl: './home.page.html'

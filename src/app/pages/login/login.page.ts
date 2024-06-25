@@ -6,7 +6,6 @@ import { AppAbstract } from '../../app.abstract';
 import { LoadingComponent } from '../../components/loading/loading.component';
 
 @Component({
-  selector: 'ipx-login.page',
   standalone: true,
   imports: [TranslateModule, ReactiveFormsModule, NgIf, LoadingComponent],
   templateUrl: './login.page.html',
