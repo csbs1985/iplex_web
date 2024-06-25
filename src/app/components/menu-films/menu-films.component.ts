@@ -15,16 +15,16 @@ export class MenuFilmsComponent extends AppAbstract implements OnInit {
   @Input() typeMidia: TypeMidiaEnum = TypeMidiaEnum.MOVIE;
 
   protected listContinueWatching = [
-    { name: "Vingadores Ultimato", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/205/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Capitão America 2 - Soldado Invernal", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' },
-    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'https://www.ocamundongo.com.br/wp-content/uploads/2015/10/divertida-mente-poster-todos-camundongo.jpg' }
+    { name: "Vingadores Ultimato", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Capitão America 2 - Soldado Invernal", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' },
+    { name: "Divertidamente", rate: "7.3", time: '2h18m', cover: 'assets/images/cover_teste.jpg' }
   ];
 
   protected titleMidia!: string;
