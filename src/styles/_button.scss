@@ -9,3 +9,18 @@ button {
         opacity: .9;
     }
 }
+
+.btn {
+    &-secondary {
+        width: fit-content;
+        height: 42px;
+        padding: 0 2rem;
+        background-color: var(--color-bg-element);
+        border-radius: 20px;
+        font-weight: 300;
+    }
+
+    &:hover {
+        opacity: .9;
+    }
+}

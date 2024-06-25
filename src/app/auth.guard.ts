@@ -7,13 +7,15 @@ import { AppAbstract } from './app.abstract';
 })
 export class AuthGuard extends AppAbstract implements CanActivate {
   canActivate(): boolean {
-    const token = localStorage.getItem('token');
+    if (typeof localStorage !== 'undefined') {
+      const token = localStorage.getItem('login');
 
-    if (token) {
-      return true;
-    } else {
-      this._router.navigate(['/login']);
-      return false;
-    }
+      if (token) {
+        return true;
+      } else {
+        this._router.navigate(['/login']);
+        return false;
+      }
+    } else return false;
   }
 }

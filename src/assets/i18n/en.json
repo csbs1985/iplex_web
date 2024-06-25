@@ -1,9 +1,11 @@
 {
+    "ADD_ACCOUNT": "Add account",
     "CHANNEL": "Channel",
     "CONTINUE_WACTHING": "Continue Wacthing",
     "FAVORITES": "Favorites",
     "LOGIN": "Login",
     "LOGIN_CREATE": "Login or create a account",
+    "LOGOUT": "Logout",
     "MANDATOTY_PASSWORD": "Mandatory password field",
     "MANDATOTY_USER": "Mandatory user field",
     "MOVIES": "Movies",
@@ -15,5 +17,6 @@
     "SERIES": "Series",
     "SHOW_ALL": "Show all",
     "USER": "User",
-    "USER_NOT_FOUND": "User not found"
+    "USER_NOT_FOUND": "User not found",
+    "WHOS_WACTHING": "Who's Wacthing?"
 }   

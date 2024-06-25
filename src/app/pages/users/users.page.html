@@ -1,1 +1,28 @@
-<p>users.page works!</p>
+<section class="w-screen h-screen flex justify-center p-14 pt-28">
+    <div class="flex flex-col justify-between gap-8">
+        <div class="flex flex-col items-center gap-8 ">
+            <img src="assets/images/logo.png" class="w-[140px]">
+
+            <h2 class="m-0">{{ 'WHOS_WACTHING' | translate }}</h2>
+        </div>
+
+        <div class="flex gap-8">
+            @for(item of listUsers; track item){
+            <div (click)="selectUser(item)" class="flex flex-col justify-center items-center gap-8">
+
+                <div [class.avatar-active]="item === userSelected" class="avatar w-[300px] h-[300px]">
+                    <img *ngIf="item.avatar" (error)="_midiaService.handleImageError($event)" [src]="item.avatar">
+                </div>
+
+                <h3>{{ item.name }}</h3>
+            </div>
+            }
+        </div>
+
+        <div class="flex gap-8 items-center">
+            <button class="btn-secondary" (click)="addUser()">{{ 'ADD_ACCOUNT' | translate }}</button>
+
+            <button class="btn-secondary" (click)="_loginService.logout()">{{ 'LOGOUT' | translate }}</button>
+        </div>
+    </div>
+</section>

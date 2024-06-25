@@ -8,8 +8,7 @@ import { TypeMidiaEnum } from '../../enums/type-midia.enum';
   selector: 'ipx-menu-films',
   standalone: true,
   imports: [NgFor, NgIf, TranslateModule],
-  templateUrl: './menu-films.component.html',
-  styleUrl: './menu-films.component.scss'
+  templateUrl: './menu-films.component.html'
 })
 export class MenuFilmsComponent extends AppAbstract implements OnInit {
   @Input() typeMidia: TypeMidiaEnum = TypeMidiaEnum.MOVIE;

@@ -4,6 +4,7 @@ import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { LoginInterface } from '../../models/login.interface';
 
 @Component({
   standalone: true,
@@ -17,6 +18,8 @@ export class LoginPage extends AppAbstract implements OnInit {
 
   protected errorUser: boolean = false;
   protected errorPasswrod: boolean = false;
+
+  private login!: LoginInterface;
 
   subject: boolean = false;
 
@@ -47,8 +50,6 @@ export class LoginPage extends AppAbstract implements OnInit {
     this.loading = true;
     this.errorUser = this.errorPasswrod = false;
 
-    console.log(this.formLogin.value);
-
     const user = this.formLogin.value.user;
     const password = this.formLogin.value.password;
 
@@ -57,10 +58,29 @@ export class LoginPage extends AppAbstract implements OnInit {
     } else if (password !== "1234") {
       this.errorPasswrod = true;
     } else {
-      this._router.navigate(['/users']);
+      this.userSave();
     };
 
     this.loading = false;
+  }
+
+  private userSave(): void {
+    this.login = {
+      user: this.formLogin.value.user,
+      password: this.formLogin.value.password,
+      users: [
+        {
+          name: this.formLogin.value.user,
+          avatar: ''
+        }
+      ]
+    }
+
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('login', JSON.stringify(this.login));
+    }
+
+    this._router.navigate(['/users']);
   }
 
   get f(): { [key: string]: any } {
