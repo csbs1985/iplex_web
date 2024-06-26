@@ -1,15 +1,17 @@
-<ipx-header></ipx-header>
+<section class="flex flex-1 relative">
+    <ipx-menu-home></ipx-menu-home>
 
-<section class="mb-8">
-    <img class="my-14 ml-8" src="../../../assets/images/logo.png">
+    <div class="mb-8 pl-[260px]">
+        <img src="assets/images/logo.png" class="my-14" (error)="_midiaService.handleImageError($event)">
 
-    <ipx-preview [midia]="listMovies" [typeMidia]="typeMidiaEnum.CONTINUE_WACTHING"></ipx-preview>
+        <ipx-preview [midia]="listMovies" [typeMidia]="typeMidiaEnum.CONTINUE_WATCHING"></ipx-preview>
 
-    <ipx-preview [midia]="listMovies" [typeMidia]="typeMidiaEnum.FAVORITE"></ipx-preview>
+        <ipx-preview [midia]="listMovies" [typeMidia]="typeMidiaEnum.FAVORITE"></ipx-preview>
 
-    <ipx-preview [midia]="listChannels" [typeMidia]="typeMidiaEnum.CHANNEL"></ipx-preview>
+        <ipx-preview [midia]="listChannels" [typeMidia]="typeMidiaEnum.CHANNEL"></ipx-preview>
 
-    <ipx-preview [midia]="listMovies" [typeMidia]="typeMidiaEnum.MOVIE"></ipx-preview>
+        <ipx-preview [midia]="listMovies" [typeMidia]="typeMidiaEnum.MOVIE"></ipx-preview>
 
-    <ipx-preview [midia]="listSeries" [typeMidia]="typeMidiaEnum.SERIE"></ipx-preview>
+        <ipx-preview [midia]="listSeries" [typeMidia]="typeMidiaEnum.SERIE"></ipx-preview>
+    </div>
 </section>

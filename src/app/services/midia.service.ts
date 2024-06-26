@@ -95,7 +95,7 @@ export class MidiaService {
 
     getTypeMidiaEnum(typeMidia: TypeMidiaEnum): string {
         if (typeMidia === TypeMidiaEnum.CHANNEL) return "CHANNEL";
-        if (typeMidia === TypeMidiaEnum.CONTINUE_WACTHING) return "CONTINUE_WACTHING";
+        if (typeMidia === TypeMidiaEnum.CONTINUE_WATCHING) return "CONTINUE_WATCHING";
         if (typeMidia === TypeMidiaEnum.FAVORITE) return "FAVORITES";
         if (typeMidia === TypeMidiaEnum.MOVIE) return "MOVIES";
         return "SERIES";

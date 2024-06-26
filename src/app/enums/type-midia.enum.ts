@@ -1,7 +1,11 @@
 export enum TypeMidiaEnum {
+    ADULT = "adult",
     CHANNEL = "channel",
-    CONTINUE_WACTHING = "continue_wacthing",
+    CONTINUE_WATCHING = "continue_watching",
+    DOCUMENTARY= "documentary",
     FAVORITE = "favorite",
     MOVIE = "movie",
-    SERIE = "serie"
+    SERIE = "serie",
+    SHOW = 'show',
+    STAND_UP = 'stand-up'
 }

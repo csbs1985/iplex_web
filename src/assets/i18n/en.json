@@ -1,7 +1,9 @@
 {
     "ADD_ACCOUNT": "Add account",
-    "CHANNEL": "Channel",
-    "CONTINUE_WACTHING": "Continue Wacthing",
+    "ADULTS": "+18 adults",
+    "CHANNEL": "TV Channel",
+    "CONTINUE_WATCHING": "Continue Watching",
+    "DOCUMENTARIES": "Documentaries",
     "FAVORITES": "Favorites",
     "LOGIN": "Login",
     "LOGIN_CREATE": "Login or create a account",
@@ -18,10 +20,12 @@
     "SERIES": "Series",
     "SETTINGS": "Settings",
     "SHOW_ALL": "Show all",
+    "SHOWS": "Shows",
+    "STAND_UP": "Stand-up",
     "TRY_AGAIN": "Try again",
     "USER": "User",
     "UNABLE_UPDATE": "Unable to update the list",
     "UPDATING_LIST": "Updating list of TV channels, movies, series and much more.",
     "USER_NOT_FOUND": "User not found",
-    "WHOS_WACTHING": "Who's Wacthing?"
+    "WHOS_WATCHING": "Who's Watching?"
 }

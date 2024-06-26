@@ -2,15 +2,15 @@ import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
-import { HeaderComponent } from '../../components/header/header.component';
-import { PreviewComponent } from '../../components/preview/preview.component';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { PreviewComponent } from '../../components/preview/preview.component';
 import { TypeMidiaEnum } from '../../enums/type-midia.enum';
 import { MidiaInterface } from '../../models/midia.interface';
+import { MenuHomeComponent } from './menu-home/menu-home.component';
 
 @Component({
   standalone: true,
-  imports: [PreviewComponent, HeaderComponent, LoadingComponent, NgIf, TranslateModule],
+  imports: [PreviewComponent, MenuHomeComponent, LoadingComponent, NgIf, TranslateModule],
   templateUrl: './home.page.html'
 })
 export class HomePage extends AppAbstract implements OnInit {

@@ -1,0 +1,45 @@
+.caltalog {
+    display: grid;
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+    gap: 1rem;
+    margin-right: 1rem;
+
+    &-item {
+        cursor: pointer;
+
+        &:hover {
+            .caltalog-cover {
+                border-color: var(--color-primary);
+                color: var(--color-primary);
+
+                h3 {
+                    color: var(--color-primary);
+                }
+
+                img {
+                    filter: brightness(0.9);
+                }
+            }
+
+            h4 {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    &-cover {
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-bg-element);
+        border-radius: var(--radius);
+        border: var(--border) solid var(--color-bg-base);
+
+        img {
+            height: 100%;
+            border-radius: Calc(var(--radius) - 0.125rem);
+            filter: brightness(0.3);
+        }
+    }
+}

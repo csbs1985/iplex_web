@@ -1,7 +1,7 @@
 <section class="w-screen h-screen flex justify-center">
     <form [formGroup]="formLogin" (ngSubmit)="onSubmit()"
         class="max-w-[300px] w-full flex flex-col justify-center items-center">
-        <img src="assets/images/logo.png" alt="" srcset="" class="w-[200px] mb-4">
+        <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[200px] mb-4">
 
         <h3 class="mb-12">{{ 'LOGIN_CREATE' | translate }}</h3>
 
