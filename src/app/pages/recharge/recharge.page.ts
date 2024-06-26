@@ -17,11 +17,10 @@ export class RechargePage extends AppAbstract implements OnInit {
 
   protected fetchPlaylistData(): void {
     this.isErrorFetch = false;
-    
+
     this._midiaService.fetchPlaylistData()
       .subscribe(
-        (result: any) => { console.log(result);
-        },
+        (result: any) => { },
         (error: any) => {
           console.error(error);
           this.isErrorFetch = true;

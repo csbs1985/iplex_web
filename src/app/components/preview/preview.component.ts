@@ -1,17 +1,18 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
 import { TypeMidiaEnum } from '../../enums/type-midia.enum';
 import { MidiaInterface } from '../../models/midia.interface';
 
 @Component({
-  selector: 'ipx-last-midia',
+  selector: 'ipx-preview',
   standalone: true,
-  imports: [NgFor, NgIf, TranslateModule],
-  templateUrl: './last-midia.component.html'
+  imports: [NgFor, NgIf, TranslateModule, RouterModule],
+  templateUrl: './preview.component.html'
 })
-export class LastMidiaComponent extends AppAbstract implements OnInit {
+export class PreviewComponent extends AppAbstract implements OnInit {
   @Input() midia: MidiaInterface[] = [];
   @Input() typeMidia: TypeMidiaEnum = TypeMidiaEnum.MOVIE;
 
@@ -25,11 +26,5 @@ export class LastMidiaComponent extends AppAbstract implements OnInit {
 
   private getTitleMidia(): void {
     this.titleMidia = this._midiaService.getTypeMidiaEnum(this.typeMidia);
-  }
-
-  protected showAll(): void { }
-
-  protected selectMidia(midia: MidiaInterface): void {
-    console.log(midia);
   }
 }

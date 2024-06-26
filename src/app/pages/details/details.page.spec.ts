@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LastMidiaComponent } from './last-midia.component';
+import { DetailsPage } from './details.page';
 
-describe('LastMidiaComponent', () => {
-  let component: LastMidiaComponent;
-  let fixture: ComponentFixture<LastMidiaComponent>;
+describe('DetailsPage', () => {
+  let component: DetailsPage;
+  let fixture: ComponentFixture<DetailsPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LastMidiaComponent]
+      imports: [DetailsPage]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(LastMidiaComponent);
+    fixture = TestBed.createComponent(DetailsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

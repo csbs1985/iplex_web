@@ -93,8 +93,6 @@ export class MidiaService {
         this._router.navigate(['/']);
     }
 
-    getAllList() { }
-
     getTypeMidiaEnum(typeMidia: TypeMidiaEnum): string {
         if (typeMidia === TypeMidiaEnum.CHANNEL) return "CHANNEL";
         if (typeMidia === TypeMidiaEnum.CONTINUE_WACTHING) return "CONTINUE_WACTHING";

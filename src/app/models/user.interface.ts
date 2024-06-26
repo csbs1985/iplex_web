@@ -4,5 +4,5 @@ export interface UserInterface {
     name?: string;
     avatar?: string;
     favorites?: MidiaInterface[],
-    history?: MidiaInterface[]
+    history?: MidiaInterface[],
 }

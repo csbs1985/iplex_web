@@ -2,17 +2,21 @@
     <h2>{{ titleMidia | translate }}</h2>
 
     <div class="w-screen flex gap-2 px-8 overflow-x-scroll">
-        <div class="cover" [class.cover-channel]="typeMidia === typeMidiaEnum.CHANNEL" (click)="showAll()">
-            <h3>{{ "SHOW_ALL" | translate }}</h3>
+        <div class="hover">
+            <div class="cover" [class.cover-channel]="typeMidia === typeMidiaEnum.CHANNEL"
+                [routerLink]="['/catalog', typeMidia]">
+                <h3 class="font-bold">{{ "SHOW_ALL" | translate }}</h3>
+            </div>
         </div>
 
         @for(item of midia; track item){
+        <div class="hover">
             <div class="cover flex-col" [class.cover-channel]="typeMidia === typeMidiaEnum.CHANNEL"
-                (click)="selectMidia(item)">
+                [routerLink]="['/details', item.url]">
                 <img [src]="item.logo" (error)="_midiaService.handleImageError($event)">
-
-                <h4 class="mt-2">{{ item.name }}</h4>
             </div>
+            <h4 class="mt-2">{{ item.name }}</h4>
+        </div>
         }
     </div>
 </section>

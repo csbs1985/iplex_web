@@ -4,4 +4,5 @@ export interface MidiaInterface {
     url: string;
     logo?: string;
     group?: string;
+    viewedTime?: string
 }

@@ -29,8 +29,8 @@ export class LoginPage extends AppAbstract implements OnInit {
 
   private createForm(): void {
     this.formLogin = this._formBuilder.group({
-      user: ['', Validators.required],
-      password: ['', Validators.required]
+      user: ['Char2305', Validators.required],
+      password: ['2304char', Validators.required]
     })
   }
 

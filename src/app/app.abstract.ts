@@ -1,6 +1,6 @@
 import { Component, OnDestroy, inject } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { SubSink } from "subsink";
 import { ApiService } from "./services/api.service";
@@ -14,6 +14,7 @@ import { MidiaService } from "./services/midia.service";
     template: ''
 })
 export abstract class AppAbstract implements OnDestroy {
+    protected _activatedRoute = inject(ActivatedRoute);
     protected _apiService = inject(ApiService);
     protected _errorService = inject(ErrorService);
     protected _formService = inject(FormService);

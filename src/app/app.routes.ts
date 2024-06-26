@@ -22,12 +22,16 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/recharge/recharge.page').then(p => p.RechargePage),
         canActivate: [AuthGuard]
     },
-
-    // {
-    //     path: 'watch',
-    //     loadChildren: () => import('./watch/watch.module').then(m => m.WatchModule),
-    //     canActivate: [AuthGuard]
-    // },
+    {
+        path: 'catalog/:type',
+        loadComponent: () => import('./pages/catalog/catalog.page').then(p => p.CatalogPage),
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'details/:id',
+        loadChildren: () => import('./pages/details/details.page').then(p => p.DetailsPage),
+        canActivate: [AuthGuard]
+    },
     // {
     //     path: 'settings',
     //     loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
@@ -36,11 +40,6 @@ export const routes: Routes = [
     // {
     //     path: 'search',
     //     loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
-    // },
-    // {
-    //     path: 'feed',
-    //     loadChildren: () => import('./feed/feed.module').then(m => m.FeedModule),
-    //     canActivate: [AuthGuard]
     // }
     { path: '**', redirectTo: '' },
 ];
