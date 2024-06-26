@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { SubSink } from "subsink";
 import { ApiService } from "./services/api.service";
+import { ErrorService } from "./services/error.service";
 import { FormService } from "./services/form.service";
 import { LanguageService } from "./services/language.service";
 import { LoginService } from "./services/login.service";
@@ -14,6 +15,7 @@ import { MidiaService } from "./services/midia.service";
 })
 export abstract class AppAbstract implements OnDestroy {
     protected _apiService = inject(ApiService);
+    protected _errorService = inject(ErrorService);
     protected _formService = inject(FormService);
     protected _languageService = inject(LanguageService);
     protected _loginService = inject(LoginService);

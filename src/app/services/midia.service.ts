@@ -25,7 +25,7 @@ export class MidiaService {
     fetchPlaylistData(): Observable<any> {
         return this._apiService.fetchChannelList().pipe(
             tap((list: any) => {
-                this.listIptv = list;
+                this.listIptv = this.parsePlaylist(list);
                 this.listAll$.next(this.listIptv);
                 this.getAllMovies();
             }),
@@ -36,22 +36,58 @@ export class MidiaService {
         );
     }
 
+    parsePlaylist(playlist: any): MidiaInterface[] {
+        const channels: MidiaInterface[] = [];
+        const lines = playlist.split('\n');
+        let channel = {};
+
+        for (const line of lines) {
+            if (line.startsWith('#EXTINF:')) {
+                const result = this.extractValues(line);
+                channel = {
+                    id: result['id'] || "",
+                    name: result['name'] || "",
+                    url: result['logo'] || "",
+                    logo: result['logo'] || "",
+                    group: result['group-title'] || ""
+                }
+            } else if (line.startsWith('http')) {
+                channel = { ...channel, url: line };
+                channels.push(channel as MidiaInterface);
+            }
+        }
+
+        return channels;
+    }
+
+    extractValues(str: string): { [key: string]: string } {
+        const regex = /tvg-(id|name|logo|group-title)="([^"]+)"/g;
+        const result: { [key: string]: string } = {};
+        let match;
+
+        while ((match = regex.exec(str)) !== null) {
+            result[match[1] as string] = match[2];
+        }
+
+        return result;
+    }
+
     getAllMovies(): void {
-        this.listMovies = this.listIptv.filter((item: MidiaInterface) => item.streamUrl.includes('movie'));
+        this.listMovies = this.listIptv.filter((item: MidiaInterface) => item.url.includes('movie'));
         this.movies$.next(this.listMovies);
 
         this.getAllSeries();
     }
 
     getAllSeries(): void {
-        this.listSeries = this.listIptv.filter((item: MidiaInterface) => item.streamUrl.includes('series'));
+        this.listSeries = this.listIptv.filter((item: MidiaInterface) => item.url.includes('series'));
         this.series$.next(this.listSeries);
 
         this.getAllChannels();
     }
 
     getAllChannels(): void {
-        this.listChannels = this.listIptv.filter((item: MidiaInterface) => !item.streamUrl.includes('movie') && !item.streamUrl.includes('series'));
+        this.listChannels = this.listIptv.filter((item: MidiaInterface) => !item.url.includes('movie') && !item.url.includes('series'));
         this.channels$.next(this.listChannels);
 
         this._router.navigate(['/']);

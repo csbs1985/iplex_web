@@ -8,7 +8,7 @@
 
         @for(item of midia; track item){
         <div class="cover" [class.cover-channel]="typeMidia === typeMidiaEnum.CHANNEL" (click)="selectMidia(item)">
-            <img [src]="item.logoUrl" (error)="_midiaService.handleImageError($event)">
+            <img [src]="item.logo" (error)="_midiaService.handleImageError($event)">
 
             <!-- <h4 class="mt-2">{{ item.name }}</h4> -->
 

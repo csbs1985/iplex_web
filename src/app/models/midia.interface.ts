@@ -1,5 +1,7 @@
 export interface MidiaInterface {
-    channelName?: string;
-    logoUrl?: string
-    streamUrl: string
+    id?: string;
+    name?: string;
+    url: string;
+    logo?: string;
+    group?: string;
 }
