@@ -53,9 +53,9 @@ export class LoginPage extends AppAbstract implements OnInit {
     const user = this.formLogin.value.user;
     const password = this.formLogin.value.password;
 
-    if (user !== 'csbs') {
+    if (user !== 'Char2305') {
       this.errorUser = true;
-    } else if (password !== "1234") {
+    } else if (password !== "2304char") {
       this.errorPasswrod = true;
     } else {
       this.userSave();
