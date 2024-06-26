@@ -76,8 +76,7 @@ export class LoginPage extends AppAbstract implements OnInit {
         {
           name: 'Luiza',
           avatar: ''
-        }
-        ,
+        },
         {
           name: 'Sabrina',
           avatar: ''

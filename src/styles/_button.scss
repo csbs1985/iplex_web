@@ -1,30 +1,22 @@
+button {
+    cursor: pointer;
+    height: var(--element);
+    background-color: var(--color-bg-element);
+    border-radius: var(--radius);
+    border: var(--border) solid var(--color-bg-input);
+    padding: 0 1.5rem;
+    font-weight: 500;
+
+    &:hover {
+        border-color: var(--color-primary);
+    }
+    
+    &:active {
+        background-color: var(--color-primary);
+    }
+}
+
 .btn {
-    &-primary {
-        min-width: 140px;
-        height: 48px;
-        border-radius: 20px;
-        padding: 0 1rem;
-        background-color: var(--color-bg-hover);
-        font-weight: 900;
-
-        &:hover {
-            opacity: .9;
-        }
-    }
-
-    &-secondary {
-        min-width: 140px;
-        height: 48px;
-        padding: 0 2rem;
-        background-color: var(--color-bg-element);
-        border-radius: 20px;
-        font-weight: 300;
-
-        &:hover {
-            opacity: .9;
-        }
-    }
-
     &-tertiary {
         width: fit-content;
         height: 42px;

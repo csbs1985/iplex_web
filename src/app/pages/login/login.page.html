@@ -3,14 +3,14 @@
         class="max-w-[300px] w-full flex flex-col justify-center items-center">
         <img src="assets/images/logo.png" alt="" srcset="" class="w-[200px] mb-4">
 
-        <p class="text-xl mb-12">{{ 'LOGIN_CREATE' | translate }}</p>
+        <h3 class="mb-12">{{ 'LOGIN_CREATE' | translate }}</h3>
 
         <input type="text" formControlName="user" placeholder="{{ 'USER' | translate }}" class="input-top w-full">
 
         <input type="password" formControlName="password" placeholder="{{ 'PASSWORD' | translate }}"
             class="input-bottom mb-4 w-full">
 
-        <button class="btn-primary w-full mb-4">{{ 'LOGIN' | translate }}</button>
+        <button class="w-full mb-4">{{ 'LOGIN' | translate }}</button>
 
         <p *ngIf="subject && f['user'].errors" class="txt-error mb-4">{{ 'MANDATOTY_USER' | translate }}</p>
         <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">{{ 'MANDATOTY_PASSWORD' | translate }}</p>
