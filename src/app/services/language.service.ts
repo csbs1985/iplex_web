@@ -1,6 +1,6 @@
 import { Injectable, inject } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { LaguangeEnum } from "../enums/language.enum";
+import { LanguageEnum } from "../enums/language.enum";
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +9,7 @@ export class LanguageService {
     protected _translateService = inject(TranslateService);
 
     initLanguage(): void {
-        let lang = LaguangeEnum.ENGLISH;
+        let lang = LanguageEnum.ENGLISH;
 
         if (typeof localStorage !== 'undefined') {
             const defaultLange = localStorage.getItem('language');
@@ -19,7 +19,7 @@ export class LanguageService {
         this.setLanguage(lang);
     }
 
-    setLanguage(lang: LaguangeEnum): void {
+    setLanguage(lang: LanguageEnum): void {
         this._translateService.setDefaultLang(lang);
         this._translateService.use(lang);
 

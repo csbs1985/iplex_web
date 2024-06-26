@@ -4,7 +4,7 @@ button {
     background-color: var(--color-bg-element);
     border-radius: var(--radius);
     border: var(--border) solid var(--color-bg-input);
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     font-weight: 500;
 
     &:hover {
@@ -18,15 +18,33 @@ button {
 
 .btn {
     &-icon {
+        width: 100%;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 16px;
         background-color: var(--color-bg-base);
         border: none;
 
         &:hover,
         &:active {
             background-color: var(--color-primary);
+        }
+    }
+
+    &-card {
+        width: 200px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+
+        img {
+            border-radius: var(--radius);
+        }
+
+        &-active {
+            border-color: var(--color-primary);
         }
     }
 }

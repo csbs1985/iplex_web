@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable, inject } from '@angular/core';
 import { Observable, catchError } from "rxjs";
 import { LoginInterface } from "../models/login.interface";
@@ -25,5 +25,17 @@ export class ApiService {
             .pipe(
                 catchError(this._errorService.handleError)
             );
+    }
+
+    searchMovies(): void {
+        const apiUrl = 'https://imdb-api.com/en/API/Search/f48ed6b9';
+        const headers = new HttpHeaders({
+            'X-RapidAPI-Key': 'f48ed6b9'
+        });
+
+        this._httpClient.get(apiUrl, { headers, params: { s: 'Nosso Lar 2 Os Mensageiros - 2024' } })
+            .subscribe(response => {
+                console.log(response);
+            });
     }
 }

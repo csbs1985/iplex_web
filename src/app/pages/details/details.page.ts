@@ -8,14 +8,14 @@ import { AppAbstract } from '../../app.abstract';
   templateUrl: './details.page.html'
 })
 export class DetailsPage extends AppAbstract implements OnInit {
-  private midiaId: string | null = '';
+  private midiaId: string = '';
 
   ngOnInit(): void {
     this.getParams();
   }
 
   private getParams() {
-    this.midiaId = this._activatedRoute.snapshot.paramMap.get('id');
+    this.midiaId = this._activatedRoute.snapshot.paramMap.get('id') || '';
     console.log(this.midiaId);
   }
 }

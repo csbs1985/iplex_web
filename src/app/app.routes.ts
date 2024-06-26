@@ -29,17 +29,17 @@ export const routes: Routes = [
     },
     {
         path: 'details/:id',
-        loadChildren: () => import('./pages/details/details.page').then(p => p.DetailsPage),
+        loadComponent: () => import('./pages/details/details.page').then(p => p.DetailsPage),
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'settings',
+        loadComponent: () => import('./pages/settings/settings.page').then(p => p.SettingsPage),
         canActivate: [AuthGuard]
     },
     // {
-    //     path: 'settings',
-    //     loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
-    //     canActivate: [AuthGuard]
-    // },
-    // {
     //     path: 'search',
-    //     loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
+    //     loadComponent: () => import('./search/search.module').then(m => m.SearchModule)
     // }
     { path: '**', redirectTo: '' },
 ];

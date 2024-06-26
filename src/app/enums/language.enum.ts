@@ -1,4 +1,4 @@
-export enum LaguangeEnum {
+export enum LanguageEnum {
     ENGLISH = "en",
     FRANCE = "fr",
     GERMAN = "de",

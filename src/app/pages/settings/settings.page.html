@@ -1,0 +1,13 @@
+<section class="flex flex-col p-8 gap-8">
+    <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[140px]">
+
+    <h3>{{ 'SETTINGS' | translate }}</h3>
+
+    <div class="flex flex-1 ">
+        <ipx-menu-settings (menuSettingsOutput)="menuSettingsOutput($event)"></ipx-menu-settings>
+
+        @if (menuSettingsSelected === menuSettingsEnum.LANGUAGE) {
+        <ipx-language-settings></ipx-language-settings>
+        }
+    </div>
+</section>
