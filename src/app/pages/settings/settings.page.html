@@ -1,10 +1,7 @@
-<section class="flex flex-1 relative">
+<section class="h-screen flex w-full items-start relative px-8">
     <ipx-menu-main></ipx-menu-main>
 
-    <div class="flex flex-col justify-center items-center p-8 gap-8 pl-[260px]">
-        <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[140px]"
-        [routerLink]="['/']">
-        
+    <div class="flex flex-col justify-center items-center p-8 pt-10  gap-8 pl-[280px]">       
         <div class="flex w-[1280px]">
             <div class="flex flex-col gap-8">
                 <h3>{{ 'SETTINGS' | translate }}</h3>

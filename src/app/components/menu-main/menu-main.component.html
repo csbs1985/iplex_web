@@ -1,14 +1,15 @@
-<menu class="h-screen w-[280px] px-4 py-8 flex flex-col justify-between bg-red-950 fixed top-0 left-0">
+<menu class="h-screen w-[280px] px-4 py-8 flex flex-col justify-between fixed top-0 left-0">
     <nav class="flex flex-col">
-        <button class="btn-icon mb-8" [routerLink]="['/users']">
+        <button class="btn-icon mb-4" [routerLink]="['/users']">
             <img class="avatar w-[36px] h-[36px]" [src]="user.avatar" (error)="_midiaService.handleImageError($event)">
             <p>{{ user.name }}</p>
         </button>
 
         @for (item of listMenuMainTop; track $index) {
-        <button class="btn-icon" (click)="selectMenuMain(item)"
-            [class.btn-icon-active]="menuMainSelected === item.text">
+        <button class="btn-icon" [routerLink]="item.route" [routerLinkActive]="'btn-icon-active'">
+
             <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
+
             <p>{{ item.text | translate }}</p>
         </button>
         }
@@ -16,9 +17,10 @@
 
     <nav class="flex flex-col ">
         @for (item of listMenuMainBottom; track $index) {
-        <button class="btn-icon" (click)="selectMenuMain(item)"
-            [class.btn-icon-active]="menuMainSelected === item.text">
+        <button class="btn-icon" [routerLink]="item.route" [routerLinkActive]="'btn-icon-active'">
+
             <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
+
             <p>{{ item.text | translate }}</p>
         </button>
         }

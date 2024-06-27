@@ -18,7 +18,6 @@ export class MenuMainComponent extends AppAbstract implements OnInit {
   typeMidiaEnum: typeof TypeMidiaEnum = TypeMidiaEnum;
 
   protected user!: UserInterface;
-  protected menuMainSelected: MenuMainEnum = MenuMainEnum.HOME;
 
   protected listMenuMainTop: MenuMainInterface[] = [
     {
@@ -100,10 +99,5 @@ export class MenuMainComponent extends AppAbstract implements OnInit {
       const login = JSON.parse(localStorage.getItem('login') || '');
       this.user = login.users[0];
     }
-  }
-
-  protected selectMenuMain(item: MenuMainInterface): void {
-    this.menuMainSelected = item.text;
-    this._router.navigate([item.route]);
   }
 }

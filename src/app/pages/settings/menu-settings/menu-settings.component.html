@@ -1,4 +1,4 @@
-<menu class="w-[300px] bg-red-950">
+<menu class="w-[300px]">
     @for (item of listMenuSettings; track $index) {
     <button class="btn-icon" [class.btn-icon-active]="menuSettingsSelected === item.link"
         (click)="selectMenuSettings(item.link)">

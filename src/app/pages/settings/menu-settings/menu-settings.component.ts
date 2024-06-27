@@ -38,7 +38,6 @@ export class MenuSettingsComponent extends AppAbstract implements OnInit {
   ngOnInit(): void { }
 
   protected selectMenuSettings(item: MenuSettingsEnum): void {
-    console.log(item);
     this.menuSettingsOutput.emit(item);
   }
 }

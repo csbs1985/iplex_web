@@ -8,6 +8,7 @@ import { ErrorService } from "./services/error.service";
 import { FormService } from "./services/form.service";
 import { LanguageService } from "./services/language.service";
 import { LoginService } from "./services/login.service";
+import { MenuService } from "./services/menu.service";
 import { MidiaService } from "./services/midia.service";
 
 @Component({
@@ -20,6 +21,7 @@ export abstract class AppAbstract implements OnDestroy {
     protected _formService = inject(FormService);
     protected _languageService = inject(LanguageService);
     protected _loginService = inject(LoginService);
+    protected _menuService = inject(MenuService);
     protected _midiaService = inject(MidiaService);
     protected _translateService = inject(TranslateService);
 
