@@ -1,13 +1,24 @@
-<section class="flex flex-col p-8 gap-8">
-    <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[140px]">
+<section class="flex flex-1 relative">
+    <ipx-menu-main></ipx-menu-main>
 
-    <h3>{{ 'SETTINGS' | translate }}</h3>
-
-    <div class="flex flex-1 ">
-        <ipx-menu-settings (menuSettingsOutput)="menuSettingsOutput($event)"></ipx-menu-settings>
-
-        @if (menuSettingsSelected === menuSettingsEnum.LANGUAGE) {
-        <ipx-language-settings></ipx-language-settings>
-        }
+    <div class="flex flex-col justify-center items-center p-8 gap-8 pl-[260px]">
+        <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[140px]"
+        [routerLink]="['/']">
+        
+        <div class="flex w-[1280px]">
+            <div class="flex flex-col gap-8">
+                <h3>{{ 'SETTINGS' | translate }}</h3>
+                
+                <ipx-menu-settings [menuSettingsSelected]="menuSettingsSelected"
+                (menuSettingsOutput)="menuSettingsOutput($event)"></ipx-menu-settings>
+            </div>
+            
+            @if (menuSettingsSelected === menuSettingsEnum.USER) {
+                <ipx-user-settings></ipx-user-settings>
+            }
+            @if (menuSettingsSelected === menuSettingsEnum.LANGUAGE) {
+                <ipx-language-settings></ipx-language-settings>
+            }
+        </div>
     </div>
 </section>

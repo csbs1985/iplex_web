@@ -23,11 +23,15 @@ button {
         align-items: center;
         gap: 16px;
         background-color: var(--color-bg-base);
-        border: none;
+        border-color: var(--color-bg-base);
 
-        &:hover,
-        &:active {
+        &:hover {
             background-color: var(--color-primary);
+        }
+
+        &:active,
+        &-active {
+            border-color: var(--color-primary);
         }
     }
 

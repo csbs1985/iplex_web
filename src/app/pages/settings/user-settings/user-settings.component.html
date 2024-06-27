@@ -1,8 +1,8 @@
-<section class="w-full p-8 pt-0 flex flex-col">
-    <h3 class="mb-8">{{ 'SELECT_LANGUAGE' | translate }}</h3>
+<section class="p-8 pt-0 flex flex-col">
+    <h3 class="mb-8">{{ 'USERS_MANAGER' | translate }}</h3>
 
-    <menu class="grid grid-cols-4 gap-4">
-        @for (item of listLanguage; track $index) {
+    <menu class="grid grid-cols-3 gap-4">
+        <!-- @for (item of listLanguage; track $index) {
         <button class="btn-card" [class.btn-card-active]="languageSelected === item.code"
             (click)="setLanguage(item.code)">
 
@@ -10,6 +10,6 @@
 
             <p>{{item.language}}</p>
         </button>
-        }
+        } -->
     </menu>
 </section>

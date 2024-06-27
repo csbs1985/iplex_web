@@ -10,9 +10,9 @@ import { UserInterface } from '../../models/user.interface';
   selector: 'ipx-menu-main',
   standalone: true,
   imports: [RouterModule, TranslateModule, NgIf],
-  templateUrl: './menu-home.component.html'
+  templateUrl: './menu-main.component.html'
 })
-export class MenuHomeComponent extends AppAbstract implements OnInit {
+export class MenuMainComponent extends AppAbstract implements OnInit {
   protected user!: UserInterface;
 
   typeMidiaEnum: typeof TypeMidiaEnum = TypeMidiaEnum;
