@@ -1,0 +1,11 @@
+.pill {
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-base);
+    border: 1px solid var(--color-element);
+    border-radius: var(--radius-sm);
+    padding: 0 1rem;
+    color: white;
+}

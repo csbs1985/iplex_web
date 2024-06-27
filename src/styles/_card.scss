@@ -1,0 +1,17 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border: var(--border) solid var(--color-base);
+    background-color: var(--color-element);
+    border-radius: var(--radius);
+
+    &:hover,
+    &:active {
+        border-color: var(--color-primary);
+    }
+
+    &-active,
+    &:active {
+        background-color: var(--color-primary);
+    }
+}

@@ -1,14 +1,12 @@
 :root {
-    --color-bg-base: #0F0F0F;
-    --color-bg-element: #28292A;
-    --color-bg-hover: #6D55A6;
-    --color-bg-input: #28292A;
+    --color-base: #0F0F0F;
+    --color-element: #28292A;
     --color-icon: #8d96a0;
     --color-primary: #6D55A6;
+
+    --color-bg-hover: #6D55A6;
+    --color-bg-input: #28292A;
+    
     --color-txt-base: #f1f1f1;
     --color-txt-error: #dc4a46;
-}
-
-span {
-    color: var(--color-primary);
 }

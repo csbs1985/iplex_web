@@ -1,7 +1,7 @@
 button {
     cursor: pointer;
     height: var(--element);
-    background-color: var(--color-bg-element);
+    background-color: var(--color-element);
     border-radius: var(--radius);
     border: var(--border) solid var(--color-bg-input);
     padding: 0 1rem;
@@ -22,8 +22,8 @@ button {
         display: flex;
         align-items: center;
         gap: 16px;
-        background-color: var(--color-bg-base);
-        border-color: var(--color-bg-base);
+        background-color: var(--color-base);
+        border-color: var(--color-base);
 
         &:hover {
             background-color: var(--color-primary);
@@ -50,5 +50,11 @@ button {
         &-active {
             border-color: var(--color-primary);
         }
+    }
+
+    &-action {
+        display: flex;
+        align-items: center;
+        gap: 16px;
     }
 }

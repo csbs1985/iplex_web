@@ -113,4 +113,9 @@ export class MidiaService {
     handleImageError(event: any): void {
         event.target.src = '';
     }
+
+    getMidiaDetails(midiaId: string): MidiaInterface {
+        const midia = this.listIptv.filter((midia: MidiaInterface) => midia.url === midiaId);
+        return midia[0] as MidiaInterface;
+    }
 }
