@@ -1,70 +1,26 @@
-<menu class="h-screen w-[260px] px-4 py-8 flex flex-col justify-between bg-base fixed top-0 left-0">
+<menu class="h-screen w-[280px] px-4 py-8 flex flex-col justify-between bg-red-950 fixed top-0 left-0">
     <nav class="flex flex-col">
         <button class="btn-icon mb-8" [routerLink]="['/users']">
             <img class="avatar w-[36px] h-[36px]" [src]="user.avatar" (error)="_midiaService.handleImageError($event)">
             <p>{{ user.name }}</p>
         </button>
 
-        <button class="btn-icon" [routerLink]="['/search']">
-            <img src="assets/icon/search.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'SEARCH' | translate }} </p>
+        @for (item of listMenuMainTop; track $index) {
+        <button class="btn-icon" (click)="selectMenuMain(item)"
+            [class.btn-icon-active]="menuMainSelected === item.text">
+            <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
+            <p>{{ item.text | translate }}</p>
         </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.CONTINUE_WATCHING]">
-            <img src="assets/icon/continue_watching.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'CONTINUE_WATCHING' | translate }} </p>
-        </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.FAVORITE]">
-            <img src="assets/icon/favorites.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'FAVORITES' | translate }} </p>
-        </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.CHANNEL]">
-            <img src="assets/icon/channels.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'CHANNEL' | translate }} </p>
-        </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.MOVIE]">
-            <img src="assets/icon/movies.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'MOVIES' | translate }} </p>
-        </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.SERIE]">
-            <img src="assets/icon/series.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'SERIES' | translate }} </p>
-        </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.DOCUMENTARY]">
-            <img src="assets/icon/documentaries.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'DOCUMENTARIES' | translate }} </p>
-        </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.SHOW]">
-            <img src="assets/icon/shows.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'SHOWS' | translate }} </p>
-        </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.STAND_UP]">
-            <img src="assets/icon/stand_up.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'STAND_UP' | translate }} </p>
-        </button>
-
-        <button class="btn-icon" [routerLink]="['/catalog', typeMidiaEnum.ADULT]">
-            <img src="assets/icon/adults.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'ADULTS' | translate }} </p>
-        </button>
+        }
     </nav>
 
     <nav class="flex flex-col ">
-        <button class="btn-icon" [routerLink]="['/recharge']">
-            <img src="assets/icon/recharge.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'RECHARGE' | translate }}</p>
+        @for (item of listMenuMainBottom; track $index) {
+        <button class="btn-icon" (click)="selectMenuMain(item)"
+            [class.btn-icon-active]="menuMainSelected === item.text">
+            <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
+            <p>{{ item.text | translate }}</p>
         </button>
-
-        <button class="btn-icon" [routerLink]="['/settings']">
-            <img src="assets/icon/settings.svg" (error)="_midiaService.handleImageError($event)">
-            <p>{{ 'SETTINGS' | translate }}</p>
-        </button>
+        }
     </nav>
 </menu>

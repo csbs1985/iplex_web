@@ -1,8 +1,9 @@
 import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { AppAbstract } from '../../app.abstract';
-import { MenuSettingsEnum } from '../../enums/menu-settings.enum';
+import { AppAbstract } from '../../../app.abstract';
+import { MenuSettingsEnum } from '../../../enums/menu-settings.enum';
+
 
 @Component({
   selector: 'ipx-menu-settings',

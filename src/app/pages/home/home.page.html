@@ -1,7 +1,7 @@
-<section class="flex flex-1 relative">
+<section class="flex flex-1 relative bg-blue-900">
     <ipx-menu-main></ipx-menu-main>
 
-    <div class="mb-8 pl-[260px]">
+    <div class="mb-8">
         <img src="assets/images/logo.png" class="my-14" (error)="_midiaService.handleImageError($event)">
 
         <ipx-preview [midia]="listMovies" [typeMidia]="typeMidiaEnum.CONTINUE_WATCHING"></ipx-preview>

@@ -4,9 +4,9 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
 import { MenuMainComponent } from '../../components/menu-main/menu-main.component';
-import { MenuSettingsComponent } from '../../components/menu-settings/menu-settings.component';
 import { MenuSettingsEnum } from '../../enums/menu-settings.enum';
 import { LanguageSettingsComponent } from './language-settings/language-settings.component';
+import { MenuSettingsComponent } from './menu-settings/menu-settings.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 @Component({
