@@ -1,0 +1,70 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+
+    &-alpha {
+        display: grid;
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: .25rem;
+    }
+
+    &-space {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: .25rem;
+
+        span:first-child {
+            grid-column: 1 / 2;
+        }
+
+        span:nth-child(2) {
+            grid-column: 2 / 6;
+        }
+
+        span:last-child {
+            grid-column: 6 / 7;
+        }
+    }
+
+    &-sm,
+    &-md,
+    &-lg {
+        cursor: pointer;
+        height: 2.5vw;
+        font-size: 1vw;
+        background-color: var(--color-element);
+        border-radius: var(--radius-sm);
+        border: var(--border) solid var(--color-element);
+
+        &:hover {
+            border-color: var(--color-primary);
+        }
+
+        &:active {
+            background-color: var(--color-primary);
+        }
+    }
+
+    &-sm {
+        aspect-ratio: 1 / 1;
+    }
+
+    &-lg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 1.5vw;
+        }
+    }
+}

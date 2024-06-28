@@ -42,9 +42,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/watch/watch.page').then(p => p.WatchPage),
         canActivate: [AuthGuard]
     },
-    // {
-    //     path: 'search',
-    //     loadComponent: () => import('./search/search.module').then(m => m.SearchModule)
-    // }
+    {
+        path: 'search',
+        loadComponent: () => import('./pages/search/search.page').then(p => p.SearchPage),
+        canActivate: [AuthGuard]
+    },
     { path: '**', redirectTo: '' },
 ];

@@ -1,0 +1,25 @@
+<section>
+    <div class="keyboard">
+        <span class="keyboard-lg mb-4" [routerLink]="['/']">{{ 'CANCEL_BACK' | translate }}</span>
+
+        <div class="keyboard-alpha">
+            @for (key of listKeys; track $index) {
+            <span class="keyboard-sm text-lg flex justify-center items-center" (click)="selectKey(key)">{{ key }}</span>
+            }
+        </div>
+
+        <div class="keyboard-space">
+            <span class="keyboard-lg keyboard-icon" (click)="selectClean()">
+                <img src="assets/icon/clean.svg" (error)="_midiaService.handleImageError($event)">
+            </span>
+
+            <span class="keyboard-md keyboard-icon" (click)="selectSpace()">
+                <img src="assets/icon/space.svg" (error)="_midiaService.handleImageError($event)">
+            </span>
+
+            <span class="keyboard-lg keyboard-icon" (click)="selectBackspace()">
+                <img src="assets/icon/backspace.svg" (error)="_midiaService.handleImageError($event)">
+            </span>
+        </div>
+    </div>
+</section>
