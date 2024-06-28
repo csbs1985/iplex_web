@@ -1,7 +1,41 @@
-<section class="w-full h-screen flex gap-8 p-8">
-    <div class="h-screen">
+<section class="w-full h-screen flex relative">
+    <div class="h-screen fixed bg-base top-0 left-0 p-8">
         <ipx-keyboard [keyboardInput]="searchText" (keyboardOutput)="keyboardOutput($event)"></ipx-keyboard>
     </div>
 
-    <div class="bg-blue-700 flex-1 h-screen"></div>
+    <div class="flex flex-col flex-1 gap-8 m-8 ml-[468px]">
+        <div class="flex items-center justify-between">
+            <div class="bg-element w-1/2 h-[2.5vw] rounded-xl flex items-center pl-4 gap-4">
+                <img src="assets/icon/search.svg" (error)="_midiaService.handleImageError($event)">
+
+                @if (searchText) {
+                <span class="text-[1vw]">{{ searchText }}</span>
+                } @else {
+                <span class="text-[1vw] color-placeholder">{{ 'SEARCH' | translate }}</span>
+                }
+            </div>
+
+            <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[140px] mb-4">
+        </div>
+
+        @if (listSearchHistoric) {
+        <div class="flex gap-2">
+            @for (item of listSearchHistoric; track $index) {
+            <button class="flex items-center gap-2 font-light" (click)="selectHistoric(item)">
+                <img src="assets/icon/historic.svg" (error)="_midiaService.handleImageError($event)">
+
+                <span>{{ item }}</span>
+            </button>
+            }
+        </div>
+        }
+
+
+        @if (listMidia.length > 0) {
+        <ipx-preview [midia]="listMidia" [typeMidia]="typeMidiaEnum.MOVIE"
+            (midiaSelectOutput)="midiaSelectOutput($event)"></ipx-preview>
+        } @else {
+        <p>iniciar pesquisa</p>
+        }
+    </div>
 </section>

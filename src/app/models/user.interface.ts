@@ -5,4 +5,5 @@ export interface UserInterface {
     avatar?: string;
     favorites?: MidiaInterface[],
     history?: MidiaInterface[],
+    search?: string[]
 }

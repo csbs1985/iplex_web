@@ -118,4 +118,8 @@ export class MidiaService {
         const midia = this.listIptv.filter((midia: MidiaInterface) => midia.url === midiaId);
         return midia[0] as MidiaInterface;
     }
+
+    filterMidiaPerName(name: string): MidiaInterface[] {
+        return this.listIptv.filter((item: MidiaInterface) => item.name?.includes(name)) as MidiaInterface[];
+    }
 }

@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
@@ -16,6 +16,8 @@ export class PreviewComponent extends AppAbstract implements OnInit {
   @Input() midia: MidiaInterface[] = [];
   @Input() typeMidia: TypeMidiaEnum = TypeMidiaEnum.MOVIE;
 
+  @Output() midiaSelectOutput = new EventEmitter<string>();
+
   typeMidiaEnum: typeof TypeMidiaEnum = TypeMidiaEnum;
 
   protected titleMidia!: string;
@@ -26,5 +28,9 @@ export class PreviewComponent extends AppAbstract implements OnInit {
 
   private getTitleMidia(): void {
     this.titleMidia = this._midiaService.getTypeMidiaEnum(this.typeMidia);
+  }
+
+  protected selectMidia(midia: string): void {
+    this.midiaSelectOutput.emit(midia);
   }
 }

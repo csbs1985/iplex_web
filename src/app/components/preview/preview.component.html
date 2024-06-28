@@ -13,7 +13,7 @@
         @for(item of midia; track item){
         <div class="caltalog-item">
             <div class="caltalog-cover flex-col" [class.caltalog-channel]="typeMidia === typeMidiaEnum.CHANNEL"
-                [routerLink]="['/details', item.url]">
+                [routerLink]="['/details', item.url]" (click)="selectMidia(item.name!)">
 
                 <img [src]="item.logo" (error)="_midiaService.handleImageError($event)">
             </div>
