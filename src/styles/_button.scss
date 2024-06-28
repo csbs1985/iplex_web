@@ -17,24 +17,6 @@ button {
 }
 
 .btn {
-    &-icon {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        background-color: var(--color-base);
-        border-color: var(--color-base);
-
-        &:hover {
-            background-color: var(--color-primary);
-        }
-
-        &:active,
-        &-active {
-            border-color: var(--color-primary);
-        }
-    }
-
     &-card {
         width: 200px;
         height: auto;

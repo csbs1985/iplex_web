@@ -1,28 +1,34 @@
 <menu class="h-screen w-[280px] px-4 py-8 flex flex-col justify-between fixed top-0 left-0">
-    <nav class="flex flex-col">
-        <button class="btn-icon mb-4" [routerLink]="['/users']">
-            <img class="avatar w-[36px] h-[36px]" [src]="user.avatar" (error)="_midiaService.handleImageError($event)">
-            <p>{{ user.name }}</p>
-        </button>
+    <nav>
+        <ul class="mb-4">
+            <li [routerLink]="['/users']">
+                <img class="avatar w-[36px] h-[36px]" [src]="user.avatar"
+                    (error)="_midiaService.handleImageError($event)">
 
-        @for (item of listMenuMainTop; track $index) {
-        <button class="btn-icon" [routerLink]="item.route" [routerLinkActive]="'btn-icon-active'">
+                <p>{{ user.name }}</p>
+            </li>
+        </ul>
 
-            <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
+        <ul>
+            @for (item of listMenuMainTop; track $index) {
+            <li [routerLink]="item.route" [routerLinkActive]="'nav-active'">
+                <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
 
-            <p>{{ item.text | translate }}</p>
-        </button>
-        }
+                <p>{{ item.text | translate }}</p>
+            </li>
+            }
+        </ul>
     </nav>
 
-    <nav class="flex flex-col ">
-        @for (item of listMenuMainBottom; track $index) {
-        <button class="btn-icon" [routerLink]="item.route" [routerLinkActive]="'btn-icon-active'">
+    <nav>
+        <ul>
+            @for (item of listMenuMainBottom; track $index) {
+            <li [routerLink]="item.route" [routerLinkActive]="'nav-active'">
+                <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
 
-            <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
-
-            <p>{{ item.text | translate }}</p>
-        </button>
-        }
+                <p>{{ item.text | translate }}</p>
+            </li>
+            }
+        </ul>
     </nav>
 </menu>

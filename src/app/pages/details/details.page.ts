@@ -10,7 +10,7 @@ import { SeasonDetailsComponent } from './season-details/season-details.componen
   templateUrl: './details.page.html'
 })
 export class DetailsPage extends AppAbstract implements OnInit {
-  private midiaId: string = '';
+  protected midiaId: string = '';
   protected midia!: MidiaInterface;
 
   protected listActhors = [

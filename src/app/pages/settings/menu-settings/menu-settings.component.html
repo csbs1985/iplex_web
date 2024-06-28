@@ -1,11 +1,14 @@
 <menu class="w-[300px]">
-    @for (item of listMenuSettings; track $index) {
-    <button class="btn-icon" [class.btn-icon-active]="menuSettingsSelected === item.link"
-        (click)="selectMenuSettings(item.link)">
+    <nav>
+        <ul>
+            @for (item of listMenuSettings; track $index) {
+            <li [class.nav-active]="menuSettingsSelected === item.link" (click)="selectMenuSettings(item.link)">
 
-        <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
+                <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
 
-        <p>{{ item.text| translate }} </p>
-    </button>
-    }
+                <p>{{ item.text| translate }} </p>
+            </li>
+            }
+        </ul>
+    </nav>
 </menu>

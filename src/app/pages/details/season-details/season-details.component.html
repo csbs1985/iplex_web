@@ -1,11 +1,13 @@
 <section class="w-full p-8 flex gap-8">
-    <menu class="flex flex-col w-[200px] gap-1">
-        @for (season of listSeasons; track $index) {
-        <button class="btn-icon" [class.btn-icon-active]="season === seasonsSelected" (click)="selectSeason(season)">
-            <p>{{ season }}</p>
-        </button>
-        }
-    </menu>
+    <nav class="flex flex-col w-[200px] gap-1">
+        <ul>
+            @for (season of listSeasons; track $index) {
+            <li [class.nav-active]="season === seasonsSelected" (click)="selectSeason(season)">
+                <p>{{ season }}</p>
+            </li>
+            }
+        </ul>
+    </nav>
 
     <main class="flex-1 grid grid-cols-4 gap-4">
         @for (episode of listEpisodes; track $index) {

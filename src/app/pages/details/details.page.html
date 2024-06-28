@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <button class="btn-action bg-primary w-auto">
+                        <button class="btn-action bg-primary w-auto" [routerLink]="['/watch', midiaId]">
                             <img [src]="'assets/icon/play.svg'" (error)="_midiaService.handleImageError($event)">
                             <p>Watch S1:E10</p>
                         </button>

@@ -1,5 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../../app.abstract';
 import { MenuSettingsEnum } from '../../../enums/menu-settings.enum';
@@ -8,7 +9,7 @@ import { MenuSettingsEnum } from '../../../enums/menu-settings.enum';
 @Component({
   selector: 'ipx-menu-settings',
   standalone: true,
-  imports: [TranslateModule, NgFor],
+  imports: [TranslateModule, NgFor, RouterModule],
   templateUrl: './menu-settings.component.html'
 })
 export class MenuSettingsComponent extends AppAbstract implements OnInit {

@@ -37,6 +37,11 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/settings/settings.page').then(p => p.SettingsPage),
         canActivate: [AuthGuard]
     },
+    {
+        path: 'watch/:id',
+        loadComponent: () => import('./pages/watch/watch.page').then(p => p.WatchPage),
+        canActivate: [AuthGuard]
+    },
     // {
     //     path: 'search',
     //     loadComponent: () => import('./search/search.module').then(m => m.SearchModule)
