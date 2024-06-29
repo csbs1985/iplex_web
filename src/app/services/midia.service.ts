@@ -89,8 +89,6 @@ export class MidiaService {
     getAllChannels(): void {
         this.listChannels = this.listIptv.filter((item: MidiaInterface) => !item.url.includes('movie') && !item.url.includes('series'));
         this.channels$.next(this.listChannels);
-
-        this._router.navigate(['/']);
     }
 
     getTypeMidiaEnum(typeMidia: TypeMidiaEnum): string {

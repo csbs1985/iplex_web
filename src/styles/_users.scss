@@ -11,7 +11,8 @@
         height: 18.75rem;
         border-radius: 50%;
         background-color: var(--color-element);
-        border: var(--border) solid var(--color-bg-input);
+        border: 0.375rem solid var(--color-base);
+        outline: 0.375rem solid var(--color-base);
 
         img {
             width: 100%;
@@ -28,7 +29,7 @@
     &:active,
     &-active {
         div {
-            border-color: var(--color-primary);
+            outline-color: var(--color-primary);
         }
 
         h3 {

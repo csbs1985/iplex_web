@@ -1,27 +1,27 @@
-<section class="w-screen h-screen flex justify-center p-14 pt-28">
-    <div class="flex flex-col justify-end gap-8">
-        <div class="flex flex-col items-center gap-8 ">
-            <img src="assets/images/logo.png" class="w-[200px]">
+<section class="w-screen h-screen flex flex-col items-center">
+    <div class="mx-auto h-2/6 flex flex-col justify-end items-center">
+        <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[200px]">
+    </div>
 
-            <h2 class="m-0">{{ 'WHOS_WATCHING' | translate }}</h2>
+    <div class="w-full flex flex-col justify-start items-center flex-1 pt-10">
+        <h2>{{ 'WHOS_WATCHING' | translate }}</h2>
 
-            <nav class="flex gap-4">
-                @for(item of listUsers; track item){
-                <div (click)="selectUser(item)" class="users" [class.users-active]="item === userSelected">
-                    <div>
-                        <img *ngIf="item.avatar" (error)="_midiaService.handleImageError($event)" [src]="item.avatar">
-                    </div>
-
-                    <h3>{{ item.name }}</h3>
+        <menu class="flex gap-8">
+            @for(item of listUsers; track item){
+            <div (click)="selectUser(item)" class="users" [class.users-active]="item === userSelected">
+                <div>
+                    <img *ngIf="item.avatar" (error)="_midiaService.handleImageError($event)" [src]="item.avatar">
                 </div>
-                }
-            </nav>
-        </div>
 
-        <div class="flex gap-4 justify-center items-center mt-64">
-            <button (click)="addUser()">{{ 'ADD_ACCOUNT' | translate }}</button>
+                <h3>{{ item.name }}</h3>
+            </div>
+            }
+        </menu>
+    </div>
 
-            <button (click)="_loginService.logout()">{{ 'LOGOUT' | translate }}</button>
-        </div>
+    <div class="flex gap-4 justify-center items-center mb-16">
+        <button [routerLink]="['/settings']">{{ 'ADD_ACCOUNT' | translate }}</button>
+
+        <button (click)="_loginService.logout()">{{ 'LOGOUT' | translate }}</button>
     </div>
 </section>

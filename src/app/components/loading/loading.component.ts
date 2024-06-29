@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { AppAbstract } from '../../app.abstract';
 
 @Component({
   selector: 'ipx-loading',
@@ -8,7 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [TranslateModule, NgIf],
   templateUrl: './loading.component.html'
 })
-export class LoadingComponent {
-  @Input() title!: string;
-  @Input() text: string = 'PROCESSING';
+export class LoadingComponent extends AppAbstract{
+  @Input() text: string = '';
 }

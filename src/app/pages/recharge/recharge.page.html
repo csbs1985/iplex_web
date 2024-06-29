@@ -1,7 +1,9 @@
-<section class="w-screen h-screen flex justify-center p-14 pt-28">
-    <div class="flex flex-col justify-center items-center gap-8">
-        <img src="assets/images/logo.png" class="w-[200px]">
+<section class="w-screen h-screen flex flex-col items-center">
+    <div class="h-2/6 flex flex-col justify-end items-center">
+        <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[200px]">
+    </div>
 
+    <div class="w-full flex flex-col justify-start items-center flex-1 pt-10">
         @if(!isErrorFetch){
         <div class="flex flex-col justify-center items-center gap-8">
             <h2 class="m-0">{{ 'PROCESSING' | translate }}</h2>
@@ -11,13 +13,17 @@
             <span class="loading w-[160px]"></span>
         </div>
         } @else {
-        <div class="flex flex-col justify-center items-center gap-8">
+        <div class="flex flex-col gap-4 justify-center items-center">
             <h2 class="m-0">{{ 'UNABLE_UPDATE' | translate }}</h2>
-
-            <button class="btn-primary" (click)="fetchPlaylistData()">{{ 'TRY_AGAIN' | translate }}</button>
-
-            <button class="btn-secondary" (click)="_loginService.logout()">{{ 'LOGOUT' | translate }}</button>
         </div>
         }
     </div>
+
+    @if (isErrorFetch) {
+    <div class="flex gap-4 justify-center items-center mb-16">
+        <button (click)="fetchPlaylistData()">{{ 'TRY_AGAIN' | translate }}</button>
+
+        <button (click)="_loginService.logout()">{{ 'LOGOUT' | translate }}</button>
+    </div>
+    }
 </section>

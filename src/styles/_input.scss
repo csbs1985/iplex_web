@@ -5,6 +5,10 @@ input {
     background-color: var(--color-bg-input);
     border: var(--border) solid var(--color-bg-input);
 
+    ::placeholder {
+        color: var(--color-placeholder);
+    }
+
     &:hover,
     &:active {
         border-color: var(--color-primary);

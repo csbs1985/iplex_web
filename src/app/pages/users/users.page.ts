@@ -1,12 +1,13 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
 import { UserInterface } from '../../models/user.interface';
 
 @Component({
   standalone: true,
-  imports: [TranslateModule, NgFor, NgIf],
+  imports: [TranslateModule, NgFor, NgIf, RouterModule],
   templateUrl: './users.page.html'
 })
 export class UsersPage extends AppAbstract implements OnInit {
@@ -32,9 +33,5 @@ export class UsersPage extends AppAbstract implements OnInit {
   protected selectUser(user: any): void {
     this.userSelected = user;
     this._router.navigate(['/recharge']);
-  }
-
-  protected addUser(): void { 
-    this._router.navigate(['/settings/users']);
   }
 }

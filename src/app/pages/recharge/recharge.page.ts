@@ -20,7 +20,9 @@ export class RechargePage extends AppAbstract implements OnInit {
 
     this._midiaService.fetchPlaylistData()
       .subscribe(
-        (result: any) => { },
+        () => {
+          this._router.navigate(['/']);
+        },
         (error: any) => {
           console.error(error);
           this.isErrorFetch = true;
