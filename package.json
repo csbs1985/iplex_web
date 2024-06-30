@@ -8,7 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:iplex_web": "node dist/iplex_web/server/server.mjs",
-    "host": "ng build --configuration production && firebase deploy"
+    "host": "ng build --configuration production && firebase deploy",
+    "tizen": "npm run build && npm run tizenPackage",
+    "tizenPackage": "cd dist/iplew_web && tizen build-web && tizen package -t wgt -- .buildResult/",
+    "tizenRun": "cd dist/iplew_web && sdb install .buildResult/iplew_web.wgt && sdb shell  \"wrt-launcher '-s Bsl3EwnDc9.iplew_web'\""
   },
   "private": true,
   "dependencies": {
