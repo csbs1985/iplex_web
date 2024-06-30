@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:iplex_web": "node dist/iplex_web/server/server.mjs",
-    "host": "npm run build && firebase deploy"
+    "host": "ng build --configuration production && firebase deploy"
   },
   "private": true,
   "dependencies": {
