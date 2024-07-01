@@ -78,7 +78,7 @@
         <div class="p-8 flex flex-col">
             <h3>Atores</h3>
 
-            <div class="grid grid-cols-8 gap-4 mt-8">
+            <div class="grid grid-cols-7 gap-4 mt-8">
                 @for (item of listActhors; track $index) {
                 <div class="flex flex-col p-4 bg-element rounded-xl gap-4">
                     <img [src]="item.photo_url" (error)="_midiaService.handleImageError($event)" class="rounded-xl">

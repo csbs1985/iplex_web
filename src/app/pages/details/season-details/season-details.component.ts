@@ -1,11 +1,12 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../../app.abstract';
 
 @Component({
   selector: 'ipx-season-details',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, TranslateModule],
   templateUrl: './season-details.component.html'
 })
 export class SeasonDetailsComponent extends AppAbstract {
