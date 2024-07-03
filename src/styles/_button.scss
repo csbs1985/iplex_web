@@ -17,6 +17,12 @@ button {
 }
 
 .btn {
+    &-action {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
     &-card {
         width: 200px;
         height: auto;
@@ -34,9 +40,22 @@ button {
         }
     }
 
-    &-action {
+    &-list {
+        width: 100%;
+        height: auto;
         display: flex;
         align-items: center;
         gap: 1rem;
+        padding: .5rem 1rem;
+        border-radius: var(--radius-sm);
+
+        img {
+            width: 3rem;
+            border-radius: var(--radius-xs);
+        }
+
+        &-active {
+            border-color: var(--color-primary);
+        }
     }
 }

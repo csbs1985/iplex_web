@@ -2,9 +2,9 @@
     <h3 class="mb-8">{{ 'SELECT_LANGUAGE' | translate }}</h3>
 
     <menu class="grid grid-cols-4 gap-4">
-        @for (item of listLanguage; track $index) {
-        <button class="btn-card" [class.btn-card-active]="languageSelected === item.code"
-            (click)="setLanguage(item.code)">
+        @for (item of _languageService.listLanguage; track $index) {
+        <button class="btn-card" [class.btn-card-active]="_languageService.languageSelected === item.code"
+            (click)="_languageService.selectLanguage(item.code)">
 
             <img [src]="item.icon" (error)="_midiaService.handleImageError($event)">
 

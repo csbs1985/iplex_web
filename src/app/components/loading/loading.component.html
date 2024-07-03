@@ -1,5 +1,5 @@
 <section class="modal">
-    <div>
+    <main>
         <img src="assets/images/logo.png" (error)="_midiaService.handleImageError($event)" class="w-[140px]">
         
         <h3>{{ 'PROCESSING' | translate }}</h3>
@@ -7,5 +7,5 @@
         <p *ngIf="text">{{ text | translate }}</p>
 
         <span class="loading w-[160px]"></span>
-    </div>
+    </main>
 </section>

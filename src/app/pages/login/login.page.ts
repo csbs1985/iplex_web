@@ -5,15 +5,17 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { LoginInterface } from '../../models/login.interface';
+import { LanguageLoginComponent } from './language-login/language-login.component';
 
 @Component({
   standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule, NgIf, LoadingComponent],
+  imports: [TranslateModule, ReactiveFormsModule, NgIf, LoadingComponent, LanguageLoginComponent],
   templateUrl: './login.page.html',
 })
 export class LoginPage extends AppAbstract implements OnInit {
   protected formLogin!: FormGroup;
 
+  protected language: boolean = false;
   protected loading: boolean = false;
 
   protected errorUser: boolean = false;
@@ -89,6 +91,10 @@ export class LoginPage extends AppAbstract implements OnInit {
     }
 
     this._router.navigate(['/users']);
+  }
+
+  protected selectLanguageLogin(): void {
+    this.language = !this.language;
   }
 
   get f(): { [key: string]: any } {

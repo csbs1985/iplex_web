@@ -20,12 +20,17 @@
             <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">{{ 'MANDATOTY_PASSWORD' | translate }}</p>
             <p *ngIf="subject && errorUser" class="txt-error mb-4">{{ 'USER_NOT_FOUND' | translate }}</p>
             <p *ngIf="subject && errorPasswrod" class="txt-error mb-4">{{ 'USER_NOT_FOUND' | translate }}</p>
+
         </div>
     </form>
 
-    <div class="flex gap-4 justify-center items-center mb-16">
+    <div class="flex flex-col gap-4 justify-center items-center mb-16">
+        <button class="w-full mb-4" (click)="selectLanguageLogin()">{{ 'LANGUAGE_DISCRIPT' | translate }}</button>
+
         <p>{{ 'NEW_HERE' | translate }}</p>
     </div>
 </section>
 
 <ipx-loading *ngIf="loading"></ipx-loading>
+
+<ipx-language-login *ngIf="language" (languageLoginOutput)="selectLanguageLogin()"></ipx-language-login>
